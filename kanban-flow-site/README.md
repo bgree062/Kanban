@@ -62,3 +62,14 @@ This ZIP contains a `kanban-flow-site` folder. In the GitHub repository, **repla
 - The Day 31 WIP choice remains hidden until Day 30 is completed on the 40-day route.
 
 To update an existing GitHub/Vercel site, replace the files in the **existing** `kanban-flow-site` directory, preserving its `src` subfolder. Vercel will build from that root directory after a new commit.
+
+
+## About Me page (v4)
+
+Select **About Me** in the top navigation, or open `/#about-me`. This dedicated page contains Brent Greenfield's professional biography, credentials, workshop description, and networking contact email `greenfieldbrent@gmail.com`. The site deliberately does not list a personal phone number or postal address.
+
+**GitHub upload:** Existing Vercel project root is `kanban-flow-site`. Upload the files from this ZIP into that existing folder, replacing matching files. In particular, update `kanban-flow-site/src/main.jsx` and `kanban-flow-site/src/style.css`; do not create `kanban-flow-site/kanban-flow-site`.
+
+## Version 5: About Me portrait
+- Added `public/images/brent-greenfield.jpg` and a responsive headshot alongside the About Me introduction.
+- For existing GitHub/Vercel projects, update `src/main.jsx`, `src/style.css`, and add `public/images/brent-greenfield.jpg` within the **existing** `kanban-flow-site` root. Do not create a nested `kanban-flow-site` directory.

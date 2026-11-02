@@ -26,3 +26,21 @@
 .about-portrait-frame{width:100%;max-width:340px;justify-self:end;aspect-ratio:4/5;overflow:hidden;border-radius:18px;border:4px solid rgba(255,255,255,.14);box-shadow:0 18px 44px rgba(0,0,0,.22);background:#5b4c47}
 .about-portrait-frame img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 31%}
 @media(max-width:710px){.about-hero-layout{grid-template-columns:1fr;gap:28px}.about-portrait-frame{justify-self:start;width:min(70%,290px)}.about-hero{padding:40px 0 46px}}
+
+/* Version 6: WIP is a system constraint, distinct from player action eligibility. */
+.column {border:2px solid transparent;transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease}
+.column.wip-available {background:#eaf5ee;border-color:#74b58a}
+.column.wip-full {background:#fff4dc;border-color:#d6a136;box-shadow:inset 0 0 0 1px #f1d9a2}
+.column.wip-exceeded {background:#fce9e8;border-color:#c83d3b;box-shadow:inset 0 0 0 1px #e8a09b}
+.column.wip-unlimited {background:#eaf0f5}
+.wip-indicator {margin:10px 0 13px;display:flex;flex-direction:column;gap:7px}
+.wip-indicator .wip-label {margin:0;font-size:12px;font-weight:700}
+.wip-meter {height:7px;background:#fff;border-radius:20px;overflow:hidden;border:1px solid #ffffff99}
+.wip-meter-fill {height:100%;border-radius:20px;background:#4f9d6a;transition:width .2s ease}
+.wip-full .wip-meter-fill {background:#cf9a25}
+.wip-exceeded .wip-meter-fill {background:#c83d3b}
+.wip-state-label {font-size:10px;letter-spacing:.15px;line-height:1.4;color:#267042}
+.wip-full .wip-state-label {color:#94610a}
+.wip-exceeded .wip-state-label {color:#aa2827}
+/* Green eligible task outlines remain separate from colored WIP lanes. */
+.column .sticky.eligible:not(:disabled) {outline:2px solid #24844a;outline-offset:1px;position:relative;z-index:1}

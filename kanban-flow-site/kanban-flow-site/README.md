@@ -52,3 +52,13 @@ Choose **Facilitated team** at setup for one operator controlling a single share
 ### Updating the deployed site on GitHub
 
 This ZIP contains a `kanban-flow-site` folder. In the GitHub repository, **replace the files inside the existing `kanban-flow-site` folder**, keeping exactly one folder at that level. The key updated files are `src/main.jsx`, `src/style.css`, and `README.md`. Commit changes to `main`; Vercel should start a new deployment from the GitHub integration. Do not upload the ZIP as a file in the repository.
+
+## Version 3 — operator guidance and task highlighting
+
+- **Facilitated team** must be selected on the simulator's setup screen. The daily DSU walkthrough begins on Day 11, before the playing cards are revealed. It does not appear in Automatic or standard Manual mode.
+- The setup screen now lists the 5-step facilitated workshop flow.
+- In Manual and Facilitated modes, the active player's card has a prominent gold highlight and the word CURRENT. Completed players' cards fade.
+- The Kanban board highlights the task cards that are legally actionable for that player and card step. On a black card, the highlighting changes from block-eligible owned work to pull-eligible To-Do work after blocking, or help-eligible work if pulling is unavailable. Only legal tasks are highlighted; the operator still explicitly chooses and applies the action.
+- The Day 31 WIP choice remains hidden until Day 30 is completed on the 40-day route.
+
+To update an existing GitHub/Vercel site, replace the files in the **existing** `kanban-flow-site` directory, preserving its `src` subfolder. Vercel will build from that root directory after a new commit.

@@ -45,20 +45,11 @@
 /* Green eligible task outlines remain separate from colored WIP lanes. */
 .column .sticky.eligible:not(:disabled) {outline:2px solid #24844a;outline-offset:1px;position:relative;z-index:1}
 
-/* Main-site entry point for the independent multiplayer experience. */
-.nav nav a{display:inline-flex;align-items:center;gap:4px}
-.choose-simulation{padding-top:48px;padding-bottom:5px}
-.choose-simulation h2{font-size:clamp(25px,3vw,33px);letter-spacing:-.8px;margin:8px 0}
-.choose-simulation>.muted{max-width:720px;font-size:15px;margin:0 0 19px}
-.choose-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
-.choose-card{background:#fff;border:1px solid #dce6ef;border-radius:13px;padding:25px;display:flex;flex-direction:column;align-items:flex-start;gap:9px;box-shadow:0 1px 4px #0f172a07}
-.choose-icon{display:flex;align-items:center;justify-content:center;color:#a87626;background:#fff4df;border-radius:12px;width:48px;height:48px}
-.choose-card h3{font-size:19px;color:#173650;margin:4px 0 0}
-.choose-card p{color:#5a6e84;line-height:1.65;font-size:14px;margin:0 0 12px;flex:1}
-.choose-card .btn{margin-top:auto}
-@media(max-width:660px){.choose-grid{grid-template-columns:1fr}.choose-simulation{padding-top:34px}.choose-card{padding:20px}.nav nav{flex-wrap:wrap;justify-content:flex-end}}
-
-/* Main homepage experience choices */
-.choose-card .choose-subtitle {font-weight:750;color:#a67828;font-size:13px;margin:0 0 1px;line-height:1.5;flex:0}
-.choose-card .choose-subtitle + p {margin-top:2px}
-@media(max-width:750px){.nav nav{gap:10px}.nav nav a{font-size:11px}}
+/* Optional player names in facilitated or manual setup */
+.name-setup { margin: 16px 0 12px; padding: 14px; border: 1px solid #dbe5ed; border-radius: 10px; background: #f8fafc; }
+.name-setup p { margin: 5px 0 12px; }
+.name-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px,1fr)); gap: 10px; }
+.name-field { display: flex; flex-direction: column; gap: 5px; font-size: 12px; font-weight: 650; color: #284258; }
+.name-field input { width: 100%; padding: 9px 10px; border-radius: 7px; border: 1px solid #b8cbd9; font: inherit; font-weight: 400; background: white; color: #182f45; }
+.name-field input:focus { outline: 2px solid #d0a449; outline-offset: 1px; }
+.card-player-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; max-width: 100%; }

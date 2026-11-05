@@ -110,3 +110,82 @@
 .choose-simulation{padding-top:52px;padding-bottom:42px}
 #how-details,#choose-simulation{scroll-margin-top:28px}
 @media(max-width:720px){.how-content{padding-top:38px}.choose-simulation{padding-top:38px}}
+
+/* Facilitated page banner */
+.facilitated-hero{background:linear-gradient(120deg,#10273e,#233f59);color:#fff;padding:58px 0 68px;border-bottom:1px solid rgba(255,255,255,.08)}
+.facilitated-hero h1{font-size:clamp(38px,5.2vw,66px);letter-spacing:-2px;line-height:1.04;margin:16px 0 14px;color:#fff}
+.facilitated-hero h1 em{color:#e6b665;font-style:normal}
+.facilitated-hero p{font-size:17px;max-width:720px;line-height:1.75;color:#d0dce8;margin:0}
+.back-link-light{color:#e3edf7;margin-bottom:24px}
+.back-link-light:hover{color:#fff;text-decoration:underline}
+@media(max-width:720px){.facilitated-hero{padding:42px 0 48px}.facilitated-hero h1{font-size:clamp(34px,10vw,48px)}}
+
+
+/* Shared page banner design — matches the Collaborative Simulator */
+:root {
+  --banner-surface: #f4f7fa;
+  --banner-ink: #0d334b;
+  --banner-gold: #c88724;
+  --banner-copy: #476781;
+  --banner-divider: #e3eaf0;
+}
+.hero,
+.facilitated-hero,
+.about-hero {
+  background: var(--banner-surface);
+  color: var(--banner-ink);
+  border-bottom: 1px solid var(--banner-divider);
+  padding: 56px 0 66px;
+}
+.hero h1,
+.facilitated-hero h1,
+.about-hero h1 {
+  color: var(--banner-ink);
+  font-size: clamp(42px, 5.3vw, 68px);
+  letter-spacing: -2.3px;
+  line-height: 1.08;
+  margin: 16px 0 17px;
+}
+.hero h1 em,
+.facilitated-hero h1 em {
+  color: var(--banner-gold);
+  font-style: normal;
+}
+.hero .eyebrow,
+.facilitated-hero .eyebrow,
+.about-hero .eyebrow {
+  color: #a86c14;
+}
+.hero p,
+.facilitated-hero p,
+.about-hero .about-intro {
+  color: var(--banner-copy);
+  font-size: 17px;
+  line-height: 1.75;
+}
+.facilitated-hero .back-link-light {
+  color: #345875;
+  font-weight: 700;
+}
+.facilitated-hero .back-link-light:hover {
+  color: var(--banner-ink);
+  text-decoration: underline;
+}
+.about-hero .about-tagline {
+  color: #ae6f12;
+}
+.about-hero .hero-link {
+  background: #dca24b;
+  color: #102f45;
+}
+.about-hero .about-portrait-frame {
+  border-color: #d3dfe7;
+  box-shadow: 0 16px 36px rgba(11, 46, 69, .12);
+}
+@media (max-width: 710px) {
+  .hero, .facilitated-hero, .about-hero { padding: 42px 0 48px; }
+  .hero h1, .facilitated-hero h1, .about-hero h1 {
+    font-size: clamp(36px, 9vw, 48px);
+    letter-spacing: -1.3px;
+  }
+}

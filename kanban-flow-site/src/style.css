@@ -53,3 +53,27 @@
 .name-field input { width: 100%; padding: 9px 10px; border-radius: 7px; border: 1px solid #b8cbd9; font: inherit; font-weight: 400; background: white; color: #182f45; }
 .name-field input:focus { outline: 2px solid #d0a449; outline-offset: 1px; }
 .card-player-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; max-width: 100%; }
+
+/* Dedicated selection page and responsive side-by-side experience cards */
+.choose-simulation{padding-top:60px;padding-bottom:70px}
+.choose-simulation h2{font-size:clamp(26px,3vw,36px);color:#173650;margin:12px 0}
+.choose-simulation>.muted{max-width:760px;margin-bottom:28px}
+.choose-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+.choose-card{display:flex;flex-direction:column;align-items:flex-start;gap:10px;background:#fff;border:1px solid #dbe4ed;border-radius:16px;padding:30px;box-shadow:0 5px 15px rgba(16,38,59,.04);min-width:0}
+.choose-card .choose-icon{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:12px;background:#edf4f8;color:#173650}
+.choose-card h3{margin:7px 0 0;font-size:23px;color:#173650}
+.choose-card p{margin:0;color:#4e657b;font-size:15px;line-height:1.65}
+.choose-card .choose-subtitle{font-weight:700;color:#263f56}
+.choose-card .btn{margin-top:auto;padding-top:13px;padding-bottom:13px}
+.facilitated-heading{padding-top:40px;padding-bottom:5px}
+.facilitated-heading h1{margin:10px 0;font-size:clamp(29px,4vw,44px);color:#14344e}
+.facilitated-heading p{color:#64748b;margin:0}
+.back-link{display:inline-flex;align-items:center;gap:9px;color:#31536c;font-weight:700;font-size:13px;margin-bottom:24px}
+.back-link:hover,.home-credit a:hover{text-decoration:underline}
+.home-credit{padding-bottom:30px;font-size:12px;line-height:1.7;color:#64748b}
+.home-credit a{color:#1b5b83;text-decoration:underline}
+@media(max-width:720px){
+  .choose-grid{grid-template-columns:1fr}
+  .choose-card{padding:22px}
+  .choose-simulation{padding-top:42px}
+}

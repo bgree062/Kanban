@@ -16,3 +16,106 @@
 .walkthrough{margin-top:12px;padding:12px 15px;background:#fff;border:1px solid #cee0ed;border-radius:9px}
 .walkthrough strong{font-size:14px}.walkthrough ol{padding-left:20px;margin:9px 0 0}.walkthrough li{font-size:13px;line-height:1.6;margin:6px 0;color:#425a70}
 @media(max-width:660px){.eligibility-banner{align-items:flex-start;flex-direction:column}.eligible-count{white-space:normal}}
+
+/* Dedicated About Me view */
+.about-hero{background:linear-gradient(125deg,#11283f,#274660);color:#fff;padding:70px 0 72px}.about-hero h1{font-size:clamp(42px,6vw,72px);letter-spacing:-2.5px;margin:16px 0 12px}.about-tagline{color:#e8c185;font-weight:700;font-size:17px;line-height:1.6}.about-intro{font-size:18px;line-height:1.7;max-width:700px;color:#d7e2ed}.about-content{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,1fr);gap:40px;padding-top:54px;padding-bottom:90px}.about-main h2{color:#173650;font-size:28px;line-height:1.2;letter-spacing:-.6px;margin:16px 0 22px}.about-main p{color:#445c73;font-size:16px;line-height:1.83;margin:0 0 22px}.about-main blockquote{border-left:4px solid #d2a14e;background:#fff;padding:22px 24px;margin:30px 0 36px;color:#173650;font-size:18px;font-weight:700;line-height:1.65}.about-side{display:flex;flex-direction:column;gap:17px}.about-info-card,.about-contact{background:#fff;border:1px solid #e1e7ef;border-radius:12px;padding:23px}.about-info-card svg{color:#ad7e32}.about-info-card h3,.about-contact h3{font-size:18px;color:#173650;margin:12px 0}.about-info-card p,.about-info-card li,.about-contact p{color:#52677e;font-size:14px;line-height:1.7}.about-info-card ul{padding-left:20px;margin-bottom:0}.about-info-card li{margin:7px 0}.about-contact{background:#eaf2f7;border-color:#c9dce8}.about-email{display:flex;align-items:center;gap:9px;color:#184969;font-size:14px;font-weight:750;overflow-wrap:anywhere;margin:18px 0 22px}.about-contact .btn{width:100%}@media(max-width:790px){.about-content{grid-template-columns:1fr;gap:24px}.about-hero{padding:55px 0}.about-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:570px){.about-side{grid-template-columns:1fr}.about-main h2{font-size:24px}.about-hero h1{font-size:42px}}
+
+/* About Me professional portrait */
+.about-hero-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(230px,.78fr);align-items:center;gap:clamp(24px,5vw,76px)}
+.about-hero-copy{min-width:0}
+.about-portrait-frame{width:100%;max-width:340px;justify-self:end;aspect-ratio:4/5;overflow:hidden;border-radius:18px;border:4px solid rgba(255,255,255,.14);box-shadow:0 18px 44px rgba(0,0,0,.22);background:#5b4c47}
+.about-portrait-frame img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 31%}
+@media(max-width:710px){.about-hero-layout{grid-template-columns:1fr;gap:28px}.about-portrait-frame{justify-self:start;width:min(70%,290px)}.about-hero{padding:40px 0 46px}}
+
+/* Version 6: WIP is a system constraint, distinct from player action eligibility. */
+.column {border:2px solid transparent;transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease}
+.column.wip-available {background:#eaf5ee;border-color:#74b58a}
+.column.wip-full {background:#fff4dc;border-color:#d6a136;box-shadow:inset 0 0 0 1px #f1d9a2}
+.column.wip-exceeded {background:#fce9e8;border-color:#c83d3b;box-shadow:inset 0 0 0 1px #e8a09b}
+.column.wip-unlimited {background:#eaf0f5}
+.wip-indicator {margin:10px 0 13px;display:flex;flex-direction:column;gap:7px}
+.wip-indicator .wip-label {margin:0;font-size:12px;font-weight:700}
+.wip-meter {height:7px;background:#fff;border-radius:20px;overflow:hidden;border:1px solid #ffffff99}
+.wip-meter-fill {height:100%;border-radius:20px;background:#4f9d6a;transition:width .2s ease}
+.wip-full .wip-meter-fill {background:#cf9a25}
+.wip-exceeded .wip-meter-fill {background:#c83d3b}
+.wip-state-label {font-size:10px;letter-spacing:.15px;line-height:1.4;color:#267042}
+.wip-full .wip-state-label {color:#94610a}
+.wip-exceeded .wip-state-label {color:#aa2827}
+/* Green eligible task outlines remain separate from colored WIP lanes. */
+.column .sticky.eligible:not(:disabled) {outline:2px solid #24844a;outline-offset:1px;position:relative;z-index:1}
+
+/* Optional player names in facilitated or manual setup */
+.name-setup { margin: 16px 0 12px; padding: 14px; border: 1px solid #dbe5ed; border-radius: 10px; background: #f8fafc; }
+.name-setup p { margin: 5px 0 12px; }
+.name-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px,1fr)); gap: 10px; }
+.name-field { display: flex; flex-direction: column; gap: 5px; font-size: 12px; font-weight: 650; color: #284258; }
+.name-field input { width: 100%; padding: 9px 10px; border-radius: 7px; border: 1px solid #b8cbd9; font: inherit; font-weight: 400; background: white; color: #182f45; }
+.name-field input:focus { outline: 2px solid #d0a449; outline-offset: 1px; }
+.card-player-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; max-width: 100%; }
+
+/* Dedicated selection page and responsive side-by-side experience cards */
+.choose-simulation{padding-top:60px;padding-bottom:70px}
+.choose-simulation h2{font-size:clamp(26px,3vw,36px);color:#173650;margin:12px 0}
+.choose-simulation>.muted{max-width:760px;margin-bottom:28px}
+.choose-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+.choose-card{display:flex;flex-direction:column;align-items:flex-start;gap:10px;background:#fff;border:1px solid #dbe4ed;border-radius:16px;padding:30px;box-shadow:0 5px 15px rgba(16,38,59,.04);min-width:0}
+.choose-card .choose-icon{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:12px;background:#edf4f8;color:#173650}
+.choose-card h3{margin:7px 0 0;font-size:23px;color:#173650}
+.choose-card p{margin:0;color:#4e657b;font-size:15px;line-height:1.65}
+.choose-card .choose-subtitle{font-weight:700;color:#263f56}
+.choose-card .btn{margin-top:auto;padding-top:13px;padding-bottom:13px}
+.facilitated-heading{padding-top:40px;padding-bottom:5px}
+.facilitated-heading h1{margin:10px 0;font-size:clamp(29px,4vw,44px);color:#14344e}
+.facilitated-heading p{color:#64748b;margin:0}
+.back-link{display:inline-flex;align-items:center;gap:9px;color:#31536c;font-weight:700;font-size:13px;margin-bottom:24px}
+.back-link:hover,.home-credit a:hover{text-decoration:underline}
+.home-credit{padding-bottom:30px;font-size:12px;line-height:1.7;color:#64748b}
+.home-credit a{color:#1b5b83;text-decoration:underline}
+@media(max-width:720px){
+  .choose-grid{grid-template-columns:1fr}
+  .choose-card{padding:22px}
+  .choose-simulation{padding-top:42px}
+}
+
+/* Standalone How It Works page */
+.how-page{background:#f4f7fa;min-height:80vh}
+.how-hero{background:linear-gradient(115deg,#062d43,#153f58);color:white;padding:75px 0 80px}
+.how-hero h1{font-size:clamp(37px,5.5vw,60px);line-height:1.12;margin:20px 0;color:#fff}
+.how-hero h1 em{color:#f2ad50;font-style:normal}
+.how-hero p{max-width:680px;color:#deebf3;font-size:17px;line-height:1.7;margin:0 0 25px}
+.how-content{padding-top:60px;padding-bottom:55px}
+.how-content h2{color:#12364f;font-size:clamp(24px,3vw,32px);margin:12px 0}
+.how-lede{max-width:850px;color:#526a7d;line-height:1.75}
+.how-phase-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px;margin:28px 0 36px}
+.how-card,.how-panel{background:white;border:1px solid #dbe5ed;border-radius:13px;padding:25px}
+.how-card h3,.how-panel h2{color:#11364f;margin:12px 0 7px;font-size:20px}
+.how-card p,.how-panel p{color:#486278;line-height:1.7;font-size:14px}
+.how-card .how-meta{color:#ad6d17;font-weight:750;margin:5px 0 12px}
+.how-step{font-weight:800;color:#d0872b;font-size:14px;letter-spacing:2px}
+.how-section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}
+.how-panel svg{color:#c77c19}
+.how-panel h2{font-size:21px}
+.how-panel p:last-child{margin-bottom:0}
+.how-cta{background:#e8f1f6;border:1px solid #c9dae6;border-radius:13px;display:flex;justify-content:space-between;align-items:center;gap:22px;padding:27px;margin:32px 0 23px}
+.how-cta h2{margin:0 0 7px;font-size:24px}
+.how-cta p{color:#486278;margin:0}
+.how-cta .btn{white-space:nowrap}
+.how-license{font-size:12px;color:#617488;line-height:1.7}
+.how-license a{color:#155b84;text-decoration:underline}
+@media(max-width:800px){.how-phase-grid{grid-template-columns:1fr}.how-section-grid{grid-template-columns:1fr}.how-cta{flex-direction:column;align-items:flex-start}.how-hero{padding:56px 0}}
+
+/* Home page learning journey: explanation first, experience choice last */
+.how-content{padding-top:58px;padding-bottom:12px}
+.choose-simulation{padding-top:52px;padding-bottom:42px}
+#how-details,#choose-simulation{scroll-margin-top:28px}
+@media(max-width:720px){.how-content{padding-top:38px}.choose-simulation{padding-top:38px}}
+
+/* Facilitated page banner */
+.facilitated-hero{background:linear-gradient(120deg,#10273e,#233f59);color:#fff;padding:58px 0 68px;border-bottom:1px solid rgba(255,255,255,.08)}
+.facilitated-hero h1{font-size:clamp(38px,5.2vw,66px);letter-spacing:-2px;line-height:1.04;margin:16px 0 14px;color:#fff}
+.facilitated-hero h1 em{color:#e6b665;font-style:normal}
+.facilitated-hero p{font-size:17px;max-width:720px;line-height:1.75;color:#d0dce8;margin:0}
+.back-link-light{color:#e3edf7;margin-bottom:24px}
+.back-link-light:hover{color:#fff;text-decoration:underline}
+@media(max-width:720px){.facilitated-hero{padding:42px 0 48px}.facilitated-hero h1{font-size:clamp(34px,10vw,48px)}}

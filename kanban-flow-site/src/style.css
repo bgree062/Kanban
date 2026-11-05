@@ -104,3 +104,9 @@
 .how-license{font-size:12px;color:#617488;line-height:1.7}
 .how-license a{color:#155b84;text-decoration:underline}
 @media(max-width:800px){.how-phase-grid{grid-template-columns:1fr}.how-section-grid{grid-template-columns:1fr}.how-cta{flex-direction:column;align-items:flex-start}.how-hero{padding:56px 0}}
+
+/* Home page learning journey: explanation first, experience choice last */
+.how-content{padding-top:58px;padding-bottom:12px}
+.choose-simulation{padding-top:52px;padding-bottom:42px}
+#how-details,#choose-simulation{scroll-margin-top:28px}
+@media(max-width:720px){.how-content{padding-top:38px}.choose-simulation{padding-top:38px}}

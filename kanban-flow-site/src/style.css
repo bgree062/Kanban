@@ -77,3 +77,30 @@
   .choose-card{padding:22px}
   .choose-simulation{padding-top:42px}
 }
+
+/* Standalone How It Works page */
+.how-page{background:#f4f7fa;min-height:80vh}
+.how-hero{background:linear-gradient(115deg,#062d43,#153f58);color:white;padding:75px 0 80px}
+.how-hero h1{font-size:clamp(37px,5.5vw,60px);line-height:1.12;margin:20px 0;color:#fff}
+.how-hero h1 em{color:#f2ad50;font-style:normal}
+.how-hero p{max-width:680px;color:#deebf3;font-size:17px;line-height:1.7;margin:0 0 25px}
+.how-content{padding-top:60px;padding-bottom:55px}
+.how-content h2{color:#12364f;font-size:clamp(24px,3vw,32px);margin:12px 0}
+.how-lede{max-width:850px;color:#526a7d;line-height:1.75}
+.how-phase-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px;margin:28px 0 36px}
+.how-card,.how-panel{background:white;border:1px solid #dbe5ed;border-radius:13px;padding:25px}
+.how-card h3,.how-panel h2{color:#11364f;margin:12px 0 7px;font-size:20px}
+.how-card p,.how-panel p{color:#486278;line-height:1.7;font-size:14px}
+.how-card .how-meta{color:#ad6d17;font-weight:750;margin:5px 0 12px}
+.how-step{font-weight:800;color:#d0872b;font-size:14px;letter-spacing:2px}
+.how-section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}
+.how-panel svg{color:#c77c19}
+.how-panel h2{font-size:21px}
+.how-panel p:last-child{margin-bottom:0}
+.how-cta{background:#e8f1f6;border:1px solid #c9dae6;border-radius:13px;display:flex;justify-content:space-between;align-items:center;gap:22px;padding:27px;margin:32px 0 23px}
+.how-cta h2{margin:0 0 7px;font-size:24px}
+.how-cta p{color:#486278;margin:0}
+.how-cta .btn{white-space:nowrap}
+.how-license{font-size:12px;color:#617488;line-height:1.7}
+.how-license a{color:#155b84;text-decoration:underline}
+@media(max-width:800px){.how-phase-grid{grid-template-columns:1fr}.how-section-grid{grid-template-columns:1fr}.how-cta{flex-direction:column;align-items:flex-start}.how-hero{padding:56px 0}}

@@ -76,3 +76,12 @@
 .flow-page .kmm-footer{line-height:1.75}
 .flow-page .kmm-footer a{text-decoration:underline;color:#275e80}
 @media(max-width:720px){.flow-page .flow-filters{grid-template-columns:1fr}}
+
+/* Evolutionary maturity view: stages inform coaching, never award a score. */
+.flow-page .flow-stage-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:20px 0}
+.flow-page .flow-stage-strip>div{display:flex;flex-direction:column;gap:6px;border:1px solid #d5e1eb;border-top:4px solid #c59b4b;background:#f8fafc;border-radius:9px;padding:13px;min-width:0}
+.flow-page .flow-stage-strip>div:nth-child(2){border-top-color:#6096bb}.flow-page .flow-stage-strip>div:nth-child(3){border-top-color:#4b9c86}.flow-page .flow-stage-strip>div:nth-child(4){border-top-color:#8776b7}.flow-page .flow-stage-strip>div:nth-child(5){border-top-color:#2a6c8c}
+.flow-page .flow-stage-strip small{font-size:10px;color:#9a712c;font-weight:800;letter-spacing:.7px}.flow-page .flow-stage-strip b{font-size:16px;color:#123b55}.flow-page .flow-stage-strip span{font-size:11px;line-height:1.45;color:#50677a}
+.flow-page .flow-principle{display:flex;flex-direction:column;gap:7px;border-left:5px solid #c59b4b;background:#fff7e9;border-radius:7px;padding:15px 18px;color:#193b51;margin-top:16px}.flow-page .flow-principle span{font-size:13px;line-height:1.6}
+.flow-page .flow-coaching-prompt{border:1px solid #d8e6ee;background:#eef5f8;padding:14px;border-radius:10px;display:grid;gap:10px}.flow-page .flow-coaching-prompt>p{margin:0;font-size:12px;color:#50677b;line-height:1.6}.flow-page .flow-coaching-prompt label{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700}.flow-page .flow-coaching-prompt select,.flow-page .flow-coaching-prompt textarea{background:#fff;border:1px solid #c2d4df;border-radius:7px;padding:10px;font:inherit;color:#183b54}.flow-page .flow-cell-readiness{display:block;margin-top:7px;color:#637c91;font-size:9px;font-weight:400;line-height:1.4}.flow-page .flow-plan-guidance{font-size:12px;line-height:1.5;color:#38566d;background:#f4f8fb;padding:10px;border-radius:7px}
+@media(max-width:950px){.flow-page .flow-stage-strip{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:620px){.flow-page .flow-stage-strip{grid-template-columns:1fr}}

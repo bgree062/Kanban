@@ -2,3 +2,62 @@
 @media(max-width:800px){.kmm-summary{grid-template-columns:repeat(3,minmax(0,1fr))}.kmm-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.kmm-heat-row{grid-template-columns:1fr}.kmm-panel{padding:14px}.kmm-practice-head{flex-wrap:wrap}}
 @media(max-width:480px){.kmm-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.kmm-filters{grid-template-columns:1fr}.kmm-hero{padding:40px 0}.kmm-practice{padding:12px}}
 @media print{header.nav,.kmm-buttons,.kmm-tabs,.kmm-filters,.kmm-focus,.kmm-bottom{display:none!important}.kmm-page{background:white}.kmm-hero{background:white!important;color:black!important;padding:10px 0}.kmm-hero h1{font-size:30px}.kmm-panel{border:0;padding:0}.kmm-practices{display:block}.kmm-practice{margin:10px 0}.kmm-statuses label:not(.selected){display:none}.kmm-statuses label.selected{border:1px solid #444}.kmm-statuses input{display:none}.kmm-summary>div{padding:8px;border:1px solid #bbb}.kmm-page{color:#000}.kmm-page .wrap{max-width:100%}.kmm-team input{border:0!important}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+/* v2: maturity-by-practice matrix from the supplied KMM HeatMap layout */
+.kmm-page .wrap{max-width:1490px}
+.kmm-workspace{display:grid;grid-template-columns:188px minmax(0,1fr);align-items:start;gap:18px;margin-top:14px}
+.kmm-work-area{min-width:0}
+.kmm-sidebar{border:1px solid #d8e4ed;background:white;border-radius:13px;padding:15px 10px;display:flex;flex-direction:column;gap:6px;position:sticky;top:18px}
+.kmm-side-title{font-size:14px;color:#173650;padding:12px 10px 14px;border-bottom:1px solid #e1e8ee;margin-bottom:6px}
+.kmm-sidebar button{display:flex;align-items:center;gap:10px;background:transparent;border:0;border-radius:8px;text-align:left;padding:12px 10px;color:#38536b;font-size:13px;font-weight:650;cursor:pointer}
+.kmm-sidebar button.active{background:#fff0d3;color:#8e5711;font-weight:800}
+.kmm-sidebar button:hover:not(.active){background:#f1f5f9}
+.kmm-side-icon{width:23px;text-align:center;font-size:17px;color:#bb822b}
+.kmm-workspace .kmm-panel{min-width:0}
+.kmm-display-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:4px 0 10px}
+.kmm-matrix-legend{display:flex;align-items:center;flex-wrap:wrap;gap:7px 11px;color:#52677b;font-size:11px}
+.kmm-key-pip{height:11px;width:11px;border-radius:3px;display:inline-block;margin-right:-5px}
+.kmm-key-pip.fully{background:#65bb93}.kmm-key-pip.partly{background:#f4c568}.kmm-key-pip.missing{background:#e88989}.kmm-key-pip.na{background:#a5b5c5}.kmm-key-pip.unassessed{background:#d8e1e8}
+.kmm-view-switch{display:flex;border:1px solid #d3dfe7;border-radius:9px;padding:3px;background:#f4f7fa}
+.kmm-view-switch button{border:0;background:transparent;border-radius:6px;padding:7px 11px;font-size:12px;color:#4d6679;font-weight:750;cursor:pointer}
+.kmm-view-switch button.active{background:#173650;color:#fff}
+.kmm-matrix-instruction{margin:4px 0 13px;font-size:12px;color:#546c7d;line-height:1.5}
+.kmm-matrix-scroller{border:1px solid #cbd8e4;border-radius:12px;overflow:auto;max-height:min(75vh,800px);background:white;scrollbar-color:#bdccd8 #f4f7fa}
+.kmm-matrix{width:100%;min-width:1150px;border-collapse:separate;border-spacing:0;table-layout:fixed;color:#19354a;font-size:11px}
+.kmm-matrix th,.kmm-matrix td{border-right:1px solid #d6e0e8;border-bottom:1px solid #d6e0e8;padding:7px 6px;text-align:left;vertical-align:top;background:white}
+.kmm-matrix thead th{position:sticky;top:0;z-index:3;text-align:center;font-weight:800;color:#19354a;vertical-align:middle}
+.kmm-matrix thead tr:nth-child(2) th{top:35px;z-index:3}
+.kmm-matrix thead .kmm-operational{background:#ffdf9b}
+.kmm-matrix thead .kmm-manager{background:#b8d5f9}
+.kmm-matrix thead .kmm-metrics{background:#e2b9ee}
+.kmm-matrix thead .kmm-head-operational{background:#fff3dc}
+.kmm-matrix thead .kmm-head-manager{background:#eaf2fe}
+.kmm-matrix thead .kmm-head-metrics{background:#f3e4f8}
+.kmm-matrix thead .kmm-maturity-col,.kmm-matrix thead .kmm-level-col,.kmm-matrix thead .kmm-kind-col{background:#edf2f7}
+.kmm-matrix .kmm-maturity-col{width:123px}.kmm-matrix .kmm-level-col{width:62px}.kmm-matrix .kmm-kind-col{width:91px}
+.kmm-matrix thead tr:nth-child(1){height:35px}.kmm-matrix thead tr:nth-child(2){height:42px}
+.kmm-matrix tr:nth-child(even) .kmm-matrix-cell{background:#fbfcfe}
+.kmm-matrix .kmm-band-cell{background:#eef4fa;font-size:12px;vertical-align:middle;min-width:123px}
+.kmm-band-cell b{display:block;color:#122f46;font-size:13px;margin-bottom:6px}
+.kmm-band-cell small{font-size:11px;color:#45617a;display:block;line-height:1.25}
+.kmm-band-cell span{display:block;color:#71869a;font-size:10px;margin-top:8px}
+.kmm-level-cell,.kmm-kind-cell{vertical-align:middle!important;background:#f7f9fc!important;font-size:11px;font-weight:700;text-align:center!important}
+.kmm-kind-label{display:inline-block;white-space:normal;line-height:1.35}
+.kmm-kind-label.transition{color:#8d5b1c}
+.kmm-matrix-cell{height:95px;padding:5px!important}
+.kmm-matrix-practice{border:1px solid transparent;background:transparent;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:5px;padding:5px 6px;width:100%;border-radius:6px;cursor:pointer;color:#1e394b;text-align:left;font-size:10.5px;line-height:1.36;min-height:40px;opacity:1!important}
+.kmm-matrix-practice + .kmm-matrix-practice{border-top:1px dashed #d2dce5;margin-top:4px;border-radius:0}
+.kmm-matrix-title b{color:#0d3049;font-weight:900;white-space:nowrap}
+.kmm-matrix-practice:hover,.kmm-matrix-practice.is-active{outline:2px solid #bf8b33;outline-offset:0;background:#fff6e4}
+.kmm-matrix-practice.fully{background:#e6f7ed}.kmm-matrix-practice.partly{background:#fff5db}.kmm-matrix-practice.missing{background:#fdecec}.kmm-matrix-practice.na{background:#eef2f6}
+.kmm-matrix-markers{display:flex;justify-content:flex-end;gap:5px;align-items:center;min-height:1px}
+.kmm-status-mini{height:17px;min-width:17px;line-height:17px;border-radius:4px;text-align:center;font-size:11px;font-weight:900;color:#102e43}
+.kmm-status-mini.fully{background:#65bb93}.kmm-status-mini.partly{background:#f4c568}.kmm-status-mini.missing{background:#e88989}.kmm-status-mini.na{background:#b4c1cb}
+.kmm-focus-mini{color:#ac721c;font-size:13px}.kmm-cell-empty{display:block;text-align:center;color:#a4b0bd;font-size:18px;padding-top:18px}
+.kmm-detail-panel{margin-top:16px;border:1px solid #d6e2ec;background:#f8fafc;border-radius:12px;padding:18px}
+.kmm-detail-title{display:flex;justify-content:space-between;gap:15px;align-items:start}.kmm-detail-title h3{font-size:18px;color:#183950;margin:8px 0 15px}
+.kmm-detail-form{display:grid;gap:13px}.kmm-detail-form b{font-size:13px}.kmm-detail-placeholder{padding:12px;text-align:center}.kmm-detail-placeholder strong{color:#173650}.kmm-detail-placeholder p{font-size:12px;color:#60768a}
+.kmm-overview-guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.kmm-overview-guide>div{padding:20px;border-radius:12px;border:1px solid #dce7ef;background:#f7fafc;display:flex;flex-direction:column;align-items:flex-start;gap:8px}.kmm-overview-guide b{font-size:14px}.kmm-overview-guide p{font-size:12px;color:#52687b;line-height:1.6;flex:1;margin:2px 0}
+@media(max-width:900px){.kmm-workspace{grid-template-columns:1fr}.kmm-sidebar{position:static;flex-direction:row;flex-wrap:wrap}.kmm-side-title{width:100%;border:0;padding:5px}.kmm-sidebar button{padding:9px}.kmm-overview-guide{grid-template-columns:1fr}}
+@media(max-width:500px){.kmm-display-toolbar{align-items:flex-start}.kmm-matrix-scroller{max-height:72vh}.kmm-detail-title{flex-direction:column}.kmm-sidebar button{font-size:11px}}
+@media print{.kmm-sidebar,.kmm-view-switch,.kmm-display-toolbar,.kmm-detail-placeholder{display:none!important}.kmm-workspace{display:block}.kmm-matrix-scroller{max-height:none;overflow:visible;border:0}.kmm-matrix{min-width:0;font-size:8px}.kmm-matrix th,.kmm-matrix td{padding:3px!important}.kmm-matrix-practice{font-size:7px}.kmm-matrix-cell{height:auto}.kmm-matrix thead th{position:static}.kmm-matrix thead tr:nth-child(2) th{top:auto}.kmm-detail-panel{break-inside:avoid}}

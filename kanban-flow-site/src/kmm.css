@@ -61,3 +61,18 @@
 @media(max-width:900px){.kmm-workspace{grid-template-columns:1fr}.kmm-sidebar{position:static;flex-direction:row;flex-wrap:wrap}.kmm-side-title{width:100%;border:0;padding:5px}.kmm-sidebar button{padding:9px}.kmm-overview-guide{grid-template-columns:1fr}}
 @media(max-width:500px){.kmm-display-toolbar{align-items:flex-start}.kmm-matrix-scroller{max-height:72vh}.kmm-detail-title{flex-direction:column}.kmm-sidebar button{font-size:11px}}
 @media print{.kmm-sidebar,.kmm-view-switch,.kmm-display-toolbar,.kmm-detail-placeholder{display:none!important}.kmm-workspace{display:block}.kmm-matrix-scroller{max-height:none;overflow:visible;border:0}.kmm-matrix{min-width:0;font-size:8px}.kmm-matrix th,.kmm-matrix td{padding:3px!important}.kmm-matrix-practice{font-size:7px}.kmm-matrix-cell{height:auto}.kmm-matrix thead th{position:static}.kmm-matrix thead tr:nth-child(2) th{top:auto}.kmm-detail-panel{break-inside:avoid}}
+
+/* Independent Flow Assessment: preserve the site's matrix language without the KMM practice taxonomy. */
+.flow-page .flow-filters{grid-template-columns:repeat(3,minmax(0,1fr))}
+.flow-page .flow-matrix{min-width:1150px}
+.flow-page .flow-matrix .kmm-maturity-col{width:155px}
+.flow-page .flow-matrix .kmm-level-col{width:76px}
+.flow-page .kmm-matrix-practice{min-height:80px;gap:12px;justify-content:space-between}
+.flow-page .kmm-matrix-markers{font-size:10px;color:#557083;text-align:right}
+.flow-page .flow-answer{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border:1px solid #cedbe7;background:#fff;border-radius:7px;font-size:12px}
+.flow-page .flow-answer.selected{border-color:#c09035;background:#fff6e3}
+.flow-page .flow-answer input{accent-color:#b9832e}
+.flow-page .kmm-detail-form>.muted{margin:5px 0}
+.flow-page .kmm-footer{line-height:1.75}
+.flow-page .kmm-footer a{text-decoration:underline;color:#275e80}
+@media(max-width:720px){.flow-page .flow-filters{grid-template-columns:1fr}}

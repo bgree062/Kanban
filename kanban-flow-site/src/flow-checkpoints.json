@@ -1,0 +1,282 @@
+[
+  {
+    "id": "FL-VIS-1",
+    "code": "FL-VIS-1",
+    "stage": 0,
+    "domain": "VIS",
+    "title": "Describe the types of requests the team receives in an ordinary week.",
+    "evidence": "Show a recent sample of incoming requests and how they became known."
+  },
+  {
+    "id": "FL-CAP-1",
+    "code": "FL-CAP-1",
+    "stage": 0,
+    "domain": "CAP",
+    "title": "Identify which work tends to compete for attention at the same time.",
+    "evidence": "Name a recent day when people were pulled in multiple directions."
+  },
+  {
+    "id": "FL-MOV-1",
+    "code": "FL-MOV-1",
+    "stage": 0,
+    "domain": "MOV",
+    "title": "Follow one recent request from first contact to its final outcome.",
+    "evidence": "Walk through what actually happened, including any waiting."
+  },
+  {
+    "id": "FL-AGR-1",
+    "code": "FL-AGR-1",
+    "stage": 0,
+    "domain": "AGR",
+    "title": "Ask teammates what they believe must happen before work can be called complete.",
+    "evidence": "Compare answers from two people doing the work."
+  },
+  {
+    "id": "FL-COO-1",
+    "code": "FL-COO-1",
+    "stage": 0,
+    "domain": "COO",
+    "title": "Identify who needs to talk when a request becomes unclear.",
+    "evidence": "Describe a recent ambiguity and how it was resolved."
+  },
+  {
+    "id": "FL-LRN-1",
+    "code": "FL-LRN-1",
+    "stage": 0,
+    "domain": "LRN",
+    "title": "Make room for people to describe friction without assigning blame.",
+    "evidence": "Record one surprising observation raised by a teammate."
+  },
+  {
+    "id": "FL-OUT-1",
+    "code": "FL-OUT-1",
+    "stage": 0,
+    "domain": "OUT",
+    "title": "Name an outcome that matters to the people receiving the service.",
+    "evidence": "Explain whose experience would improve if this outcome changed."
+  },
+  {
+    "id": "FL-VIS-2",
+    "code": "FL-VIS-2",
+    "stage": 1,
+    "domain": "VIS",
+    "title": "Agree on a shared description for each kind of work the team handles.",
+    "evidence": "Show examples of work that do and do not fit each description."
+  },
+  {
+    "id": "FL-CAP-2",
+    "code": "FL-CAP-2",
+    "stage": 1,
+    "domain": "CAP",
+    "title": "Discuss what the team will avoid starting when attention is stretched.",
+    "evidence": "Record a real tradeoff the team agreed to make."
+  },
+  {
+    "id": "FL-MOV-2",
+    "code": "FL-MOV-2",
+    "stage": 1,
+    "domain": "MOV",
+    "title": "Agree on what it means for a request to move to its next step.",
+    "evidence": "Provide an example of a handoff that met the agreement."
+  },
+  {
+    "id": "FL-AGR-2",
+    "code": "FL-AGR-2",
+    "stage": 1,
+    "domain": "AGR",
+    "title": "Write down the few operating expectations that people ask about most.",
+    "evidence": "Check whether a newcomer can find and explain these expectations."
+  },
+  {
+    "id": "FL-COO-2",
+    "code": "FL-COO-2",
+    "stage": 1,
+    "domain": "COO",
+    "title": "Agree on a simple way to ask for help when progress stalls.",
+    "evidence": "Show how a request for assistance was noticed and answered."
+  },
+  {
+    "id": "FL-LRN-2",
+    "code": "FL-LRN-2",
+    "stage": 1,
+    "domain": "LRN",
+    "title": "Set a regular moment to reflect on how the work is going.",
+    "evidence": "Capture one question the team agreed to revisit."
+  },
+  {
+    "id": "FL-OUT-2",
+    "code": "FL-OUT-2",
+    "stage": 1,
+    "domain": "OUT",
+    "title": "Choose a small set of signals that reveal service experience, not individual productivity.",
+    "evidence": "Explain how each signal would inform a decision."
+  },
+  {
+    "id": "FL-VIS-3",
+    "code": "FL-VIS-3",
+    "stage": 2,
+    "domain": "VIS",
+    "title": "Keep an up-to-date shared picture of active requests and their current situation.",
+    "evidence": "Compare the visible picture with real work underway today."
+  },
+  {
+    "id": "FL-CAP-3",
+    "code": "FL-CAP-3",
+    "stage": 2,
+    "domain": "CAP",
+    "title": "Create breathing room before accepting new active work.",
+    "evidence": "Describe what was finished or deferred to make room."
+  },
+  {
+    "id": "FL-MOV-3",
+    "code": "FL-MOV-3",
+    "stage": 2,
+    "domain": "MOV",
+    "title": "Check aging requests before choosing what to start next.",
+    "evidence": "Provide a case where an aging request changed a decision."
+  },
+  {
+    "id": "FL-AGR-3",
+    "code": "FL-AGR-3",
+    "stage": 2,
+    "domain": "AGR",
+    "title": "Make exceptions explicit so they do not silently become the normal path.",
+    "evidence": "Show one exception and who agreed to it."
+  },
+  {
+    "id": "FL-COO-3",
+    "code": "FL-COO-3",
+    "stage": 2,
+    "domain": "COO",
+    "title": "Resolve stuck work through named conversations rather than silent escalation.",
+    "evidence": "Describe an impediment resolved by coordinated action."
+  },
+  {
+    "id": "FL-LRN-3",
+    "code": "FL-LRN-3",
+    "stage": 2,
+    "domain": "LRN",
+    "title": "Test one small process change for a defined period.",
+    "evidence": "State what changed, when it was tried, and what people noticed."
+  },
+  {
+    "id": "FL-OUT-3",
+    "code": "FL-OUT-3",
+    "stage": 2,
+    "domain": "OUT",
+    "title": "Review finished work alongside unfinished and aging work.",
+    "evidence": "Show how both kinds of evidence affected a planning decision."
+  },
+  {
+    "id": "FL-VIS-4",
+    "code": "FL-VIS-4",
+    "stage": 3,
+    "domain": "VIS",
+    "title": "Compare planned work with unexpected demand to uncover recurring surprises.",
+    "evidence": "Identify a pattern found in recent requests."
+  },
+  {
+    "id": "FL-CAP-4",
+    "code": "FL-CAP-4",
+    "stage": 3,
+    "domain": "CAP",
+    "title": "Use actual completion patterns to discuss realistic near-term commitments.",
+    "evidence": "Give an example where evidence changed a commitment."
+  },
+  {
+    "id": "FL-MOV-4",
+    "code": "FL-MOV-4",
+    "stage": 3,
+    "domain": "MOV",
+    "title": "Investigate repeated waiting or rework rather than treating each case alone.",
+    "evidence": "Describe one common source of delay and what was learned."
+  },
+  {
+    "id": "FL-AGR-4",
+    "code": "FL-AGR-4",
+    "stage": 3,
+    "domain": "AGR",
+    "title": "Revisit working agreements when their costs exceed their benefits.",
+    "evidence": "Show which agreement changed and why."
+  },
+  {
+    "id": "FL-COO-4",
+    "code": "FL-COO-4",
+    "stage": 3,
+    "domain": "COO",
+    "title": "Invite neighboring teams or customers into discussions about recurring friction.",
+    "evidence": "Describe a conversation that changed how work was coordinated."
+  },
+  {
+    "id": "FL-LRN-4",
+    "code": "FL-LRN-4",
+    "stage": 3,
+    "domain": "LRN",
+    "title": "Review whether an improvement attempt helped, harmed, or made no difference.",
+    "evidence": "Compare the expected result with what was observed."
+  },
+  {
+    "id": "FL-OUT-4",
+    "code": "FL-OUT-4",
+    "stage": 3,
+    "domain": "OUT",
+    "title": "Discuss tradeoffs between speed, reliability, effort, and customer experience.",
+    "evidence": "Give a decision where more than one outcome mattered."
+  },
+  {
+    "id": "FL-VIS-5",
+    "code": "FL-VIS-5",
+    "stage": 4,
+    "domain": "VIS",
+    "title": "Adjust how work is made visible as services and demand change.",
+    "evidence": "Show an example of a new work type being accommodated."
+  },
+  {
+    "id": "FL-CAP-5",
+    "code": "FL-CAP-5",
+    "stage": 4,
+    "domain": "CAP",
+    "title": "Reconsider capacity boundaries when circumstances change, then observe the result.",
+    "evidence": "Explain the hypothesis and evidence for a capacity change."
+  },
+  {
+    "id": "FL-MOV-5",
+    "code": "FL-MOV-5",
+    "stage": 4,
+    "domain": "MOV",
+    "title": "Coordinate decisions about work across multiple teams without hiding local constraints.",
+    "evidence": "Trace one cross-team request and the choices it required."
+  },
+  {
+    "id": "FL-AGR-5",
+    "code": "FL-AGR-5",
+    "stage": 4,
+    "domain": "AGR",
+    "title": "Make it clear how operating rules are reviewed and who can propose changes.",
+    "evidence": "Show a proposed change and how feedback was included."
+  },
+  {
+    "id": "FL-COO-5",
+    "code": "FL-COO-5",
+    "stage": 4,
+    "domain": "COO",
+    "title": "Strengthen the ability to respond together when priorities shift unexpectedly.",
+    "evidence": "Describe a recent coordinated response and what enabled it."
+  },
+  {
+    "id": "FL-LRN-5",
+    "code": "FL-LRN-5",
+    "stage": 4,
+    "domain": "LRN",
+    "title": "Share useful experiments between teams without forcing the same solution everywhere.",
+    "evidence": "Document what another team adapted rather than copied."
+  },
+  {
+    "id": "FL-OUT-5",
+    "code": "FL-OUT-5",
+    "stage": 4,
+    "domain": "OUT",
+    "title": "Periodically reconsider which outcomes best represent a useful, sustainable service.",
+    "evidence": "Explain a signal that was added, removed, or reinterpreted."
+  }
+]

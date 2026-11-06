@@ -212,3 +212,12 @@
 @keyframes ticket-updated{0%{transform:scale(.94);box-shadow:0 0 0 0 #3b9c7255}35%{transform:scale(1.035);box-shadow:0 0 0 5px #3b9c7240}100%{transform:scale(1);box-shadow:0 0 0 0 transparent}}
 @keyframes blocker-appear{0%{transform:scale(.95);box-shadow:0 0 0 0 #ce554c55}40%{transform:scale(1.035);box-shadow:0 0 0 5px #ce554c33}100%{transform:scale(1);box-shadow:0 0 0 0 transparent}}
 @media(prefers-reduced-motion:reduce){.task-interactive,.task-blocked-badge,.task-just-changed,.task-block-flash{animation:none!important;transition:none!important}}
+
+/* Facilitated workshop: keep the day advancement available without scrolling past 30 tickets. */
+.day-advance-bar{position:sticky;top:8px;z-index:25;display:flex;justify-content:space-between;align-items:center;gap:16px;margin:18px 0 12px;padding:11px 14px;border:1px solid #d3dfe9;border-radius:12px;background:rgba(255,255,255,.97);box-shadow:0 5px 18px rgba(16,43,63,.09);backdrop-filter:blur(8px)}
+.day-advance-bar.ready{border-color:#84b99b;background:rgba(238,249,242,.98)}
+.day-advance-status{display:flex;flex-direction:column;gap:4px;color:#18344e}
+.day-advance-status strong{font-size:14px}
+.day-advance-status span{font-size:12px;color:#5b7082}
+.day-advance-button{white-space:nowrap;flex-shrink:0}
+@media(max-width:600px){.day-advance-bar{top:4px;gap:10px;padding:10px}.day-advance-status strong{font-size:12px}.day-advance-status span{font-size:11px}.day-advance-button{font-size:12px;padding:10px}}

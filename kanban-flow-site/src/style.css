@@ -189,3 +189,26 @@
     letter-spacing: -1.3px;
   }
 }
+
+
+/* Facilitated board interactions — ticket actions, drag targets, and subtle animations. */
+.task-interactive{position:relative;transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease;cursor:default;min-width:0}
+.task-interactive.task-draggable{cursor:grab;touch-action:pan-y}
+.task-interactive.task-draggable:active{cursor:grabbing}
+.task-title{display:flex;align-items:center;justify-content:space-between;gap:5px}
+.task-drag-grip{font-size:18px;line-height:1;color:#47765c}
+.task-inline-actions{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.task-inline-btn{background:#fff;border:1px solid #b4c6d1;color:#214058;border-radius:5px;padding:6px 8px;font-size:11px;line-height:1.2;font-weight:750;cursor:pointer;min-height:30px;max-width:100%}
+.task-inline-btn:hover{filter:brightness(.96)}
+.task-move-btn{background:#e3f1e7;border-color:#8ebda1;color:#155f3b}
+.task-block-btn{background:#fff0e8;border-color:#d9a08f;color:#963e31}
+.task-unblock-btn{background:#e2f5ee;border-color:#84b9a6;color:#176e57}
+.task-blocked-badge{display:inline-block;padding:4px 6px;border-radius:4px;background:#fce3df;color:#a32e2e!important;animation:blocker-appear .42s ease-out}
+.task-drop-target{outline:3px dashed #348a59;outline-offset:-4px;background:#e0f5e7!important}
+.task-fallback-actions{margin-top:14px;padding:10px 0;border-top:1px solid #e2e8f0}
+.task-fallback-actions summary{font-size:12px;font-weight:700;color:#52677e;cursor:pointer;margin-bottom:10px}
+.task-just-changed{animation:ticket-updated .85s ease-out}
+.task-block-flash{animation:blocker-appear .85s ease-out}
+@keyframes ticket-updated{0%{transform:scale(.94);box-shadow:0 0 0 0 #3b9c7255}35%{transform:scale(1.035);box-shadow:0 0 0 5px #3b9c7240}100%{transform:scale(1);box-shadow:0 0 0 0 transparent}}
+@keyframes blocker-appear{0%{transform:scale(.95);box-shadow:0 0 0 0 #ce554c55}40%{transform:scale(1.035);box-shadow:0 0 0 5px #ce554c33}100%{transform:scale(1);box-shadow:0 0 0 0 transparent}}
+@media(prefers-reduced-motion:reduce){.task-interactive,.task-blocked-badge,.task-just-changed,.task-block-flash{animation:none!important;transition:none!important}}

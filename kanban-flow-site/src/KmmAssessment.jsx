@@ -58,7 +58,7 @@ export default function KmmAssessment(){
    <section className="kmm-hero"><div className="wrap"><div className="eyebrow">ASSESSMENTS · KANBAN FLOW LAB</div><h1>KMM Practice <em>Assessment.</em></h1><p>Make current practices visible, discuss gaps, and choose your next improvement experiment.</p><p className="kmm-disclaimer">Based on the structure of KMM HeatMap v2.3. This is a self-assessment aid, not an official KMM certification or automated maturity determination.</p></div></section>
    <div className="wrap kmm-main">
      <div className="kmm-toolbar">
-       <label className="kmm-team">Team or service name <input value={team} onChange={e=>setTeam(e.target.value)} placeholder="e.g. API Banking" maxLength={90}/></label>
+       <label className="kmm-team">Team or service name <input value={team} onChange={e=>setTeam(e.target.value)} placeholder="e.g. Customer Support Team" maxLength={90}/></label>
        <div className="kmm-buttons"><button type="button" className="kmm-action secondary" onClick={exportCsv}>Export CSV</button><button type="button" className="kmm-action secondary" onClick={exportJson}>Save assessment file</button><label className="kmm-action secondary km-file">Load assessment file<input type="file" accept=".json,application/json" onChange={importJson}/></label><button type="button" className="kmm-action" onClick={()=>window.print()}>Print / Save PDF</button></div>
      </div>
      <p className="kmm-note">Your responses are kept only in this browser session. To resume later, save a JSON assessment file and load it again. No account or database is required.</p>

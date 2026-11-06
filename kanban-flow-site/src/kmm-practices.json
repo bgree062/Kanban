@@ -1,0 +1,1538 @@
+[
+  {
+    "id": "C-VZ 0.1",
+    "code": "VZ 0.1",
+    "title": "Visualize a person’s work by means of a individual kanban board",
+    "level": 0,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 1.1",
+    "code": "VZ 1.1",
+    "title": "Visualize work for several individuals by means of an aggregated individual kanban board",
+    "level": 1,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 0.2",
+    "code": "VZ 0.2",
+    "title": "Visualize basic work item related information on a ticket",
+    "level": 0,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 1.2",
+    "code": "VZ 1.2",
+    "title": "Visualize discovered initial policies",
+    "level": 1,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 1.4",
+    "code": "VZ 1.4",
+    "title": "Visualize the work carried out by a team by means of a team kanban board",
+    "level": 1,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 1.3",
+    "code": "VZ 1.3",
+    "title": "Use avatars to visualize individual’s workload",
+    "level": 1,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 1.5",
+    "code": "VZ 1.5",
+    "title": "Visualize basic policies",
+    "level": 1,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 2.1",
+    "code": "VZ 2.1",
+    "title": "Visualize progress using a horizontal position on an emergent workflow kanban board",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 2.9",
+    "code": "VZ 2.9",
+    "title": "Visualize unordered activities with checkboxes on the ticket",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 2.2",
+    "code": "VZ 2.2",
+    "title": "Visualize work types by means of card colors or board rows",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 2.10",
+    "code": "VZ 2.10",
+    "title": "Visualize optional, unordered, potentially concurrent activities using two columns of checkboxes on the ticket",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 2.3",
+    "code": "VZ 2.3",
+    "title": "Visualize blocked work items, defects and rework",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 2.11",
+    "code": "VZ 2.11",
+    "title": "Visualize optional multiple unordered, nonconcurrent activities performed by specialist teams using partial rows within a column on the board",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 2.4",
+    "code": "VZ 2.4",
+    "title": "Visualize work item aging",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 2.12",
+    "code": "VZ 2.12",
+    "title": "Visualize defined workflow using a kanban board",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 2.5",
+    "code": "VZ 2.5",
+    "title": "Visualize dependencies on another service or system",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 2.13",
+    "code": "VZ 2.13",
+    "title": "Visualize multiple services by means of aggregated service delivery overview board",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 2.6",
+    "code": "VZ 2.6",
+    "title": "Visualize dependencies on shared services using avatars",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 3.11",
+    "code": "VZ 3.11",
+    "title": "Visualize replenishment signals",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 2.7",
+    "code": "VZ 2.7",
+    "title": "Visualize basic service policies",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 3.12",
+    "code": "VZ 3.12",
+    "title": "Visualize pull criteria (also known as pull policies, definition of done, or exit criteria)",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 2.8",
+    "code": "VZ 2.8",
+    "title": "Visualize constant WIP (CONWIP) on an emergent workflow delivery kanban board",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 3.13",
+    "code": "VZ 3.13",
+    "title": "Visualize what is pullable",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 3.1",
+    "code": "VZ 3.1",
+    "title": "Visualize Ready to Commit status, also known as Ready to Pull",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 3.14",
+    "code": "VZ 3.14",
+    "title": "Visualize available capacity",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 3.2",
+    "code": "VZ 3.2",
+    "title": "Visualize request acceptance criteria, also known as entry criteria",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 3.15",
+    "code": "VZ 3.15",
+    "title": "Visualize failure demand versus value demand",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 3.3",
+    "code": "VZ 3.3",
+    "title": "Visualize workflow and teams’ work items by means of an aggregated teams kanban board",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 3.16",
+    "code": "VZ 3.16",
+    "title": "Visualize target date or SLA",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 3.4",
+    "code": "VZ 3.4",
+    "title": "Visualize ideas development by means of an upstream (discovery) kanban board",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 3.17",
+    "code": "VZ 3.17",
+    "title": "Visualize dependencies on shared services using a column with a WIP limit",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 3.5",
+    "code": "VZ 3.5",
+    "title": "Visualize discarded options on an upstream (discovery) kanban board",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 4.7",
+    "code": "VZ 4.7",
+    "title": "Visualize WIP limits on dependencies parking lot",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 3.6",
+    "code": "VZ 3.6",
+    "title": "Visualize aborted work",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 4.8",
+    "code": "VZ 4.8",
+    "title": "Visualize capacity allocation by work type",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 3.7",
+    "code": "VZ 3.7",
+    "title": "Visualize class of service using ticket colors, board rows or ticket decorators",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 4.9",
+    "code": "VZ 4.9",
+    "title": "Visualize capacity allocation by class of service",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 3.8",
+    "code": "VZ 3.8",
+    "title": "Visualize parent-child and peer-peer dependencies",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-VZ 5.1",
+    "code": "VZ 5.1",
+    "title": "Visualize fixed teams and floating workers (shared resources) across aggregated services",
+    "level": 5,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 3.9",
+    "code": "VZ 3.9",
+    "title": "Use a parking lot to visualize currently waiting or blocked work requests dependent on another service or system",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 0.1",
+    "code": "LW 0.1",
+    "title": "Establish individual WIP limits",
+    "level": 0,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 3.10",
+    "code": "VZ 3.10",
+    "title": "Visualize pull signals",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 1.2",
+    "code": "LW 1.2",
+    "title": "Establish team WIP limits",
+    "level": 1,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 4.1",
+    "code": "VZ 4.1",
+    "title": "Visualize local cycle time",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 2.1",
+    "code": "LW 2.1",
+    "title": "Establish constant WIP (CONWIP) limits on an emergent workflow",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 4.2",
+    "code": "VZ 4.2",
+    "title": "Use ticket decorators to indicate risks",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 3.2",
+    "code": "LW 3.2",
+    "title": "Use an order point (minimum limit) for upstream replenishment",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 4.3",
+    "code": "VZ 4.3",
+    "title": "Visualize risk classes with different swim lanes",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 3.3",
+    "code": "LW 3.3",
+    "title": "Use a maximum (max) limit to constrain upstream capacity",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 4.4",
+    "code": "VZ 4.4",
+    "title": "Visualize split-and-merge workflows",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 3.4",
+    "code": "LW 3.4",
+    "title": "Bracket WIP limits across sub-states",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 4.5",
+    "code": "VZ 4.5",
+    "title": "Visualize waiting time in dependencies parking lot",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 3.5",
+    "code": "LW 3.5",
+    "title": "Bracket WIP limits across activities",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-VZ 4.6",
+    "code": "VZ 4.6",
+    "title": "Visualize SLA exceeded in dependencies parking lot",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 3.6",
+    "code": "LW 3.6",
+    "title": "Create a full kanban system",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-LW 1.1",
+    "code": "LW 1.1",
+    "title": "Establish per-person WIP limits",
+    "level": 1,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 4.1",
+    "code": "LW 4.1",
+    "title": "Limit WIP for a dependency parking lot",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-LW 3.0",
+    "code": "LW 3.0",
+    "title": "Establish WIP limit on the aggregated service delivery overview board",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 4.2",
+    "code": "LW 4.2",
+    "title": "Limit WIP by type ofwork",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-LW 3.1",
+    "code": "LW 3.1",
+    "title": "Establish activitybased WIP limits",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-LW 4.3",
+    "code": "LW 4.3",
+    "title": "Limit WIP by class of service",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 2.1",
+    "code": "MF 2.1",
+    "title": "Define work types based on customer requests",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 0.1",
+    "code": "MF 0.1",
+    "title": "Categorize tasks based on the nature of the work and its urgency, importance, and impact",
+    "level": 0,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 2.2",
+    "code": "MF 2.2",
+    "title": "Define basic services",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 2.6",
+    "code": "MF 2.6",
+    "title": "Manage defects and other rework types",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 2.3",
+    "code": "MF 2.3",
+    "title": "Map upstream and downstream flow",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 2.7",
+    "code": "MF 2.7",
+    "title": "Manage aging WIP",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 2.4",
+    "code": "MF 2.4",
+    "title": "Collect flow-related data (e.g., lead time)",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 2.8",
+    "code": "MF 2.8",
+    "title": "Implement Flow Manager role",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 2.5",
+    "code": "MF 2.5",
+    "title": "Capture the desired delivery date",
+    "level": 2,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 3.12",
+    "code": "MF 3.12",
+    "title": "Develop triage discipline",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.0",
+    "code": "MF 3.0",
+    "title": "Manage blocking issues",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 3.13",
+    "code": "MF 3.13",
+    "title": "Manage peer-to-peer and parent-child dependencies",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.1",
+    "code": "MF 3.1",
+    "title": "Organize around the knowledge discovery process",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 3.14",
+    "code": "MF 3.14",
+    "title": "Use two-phase commit",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.2",
+    "code": "MF 3.2",
+    "title": "Defer commitment (decide before the last responsible moment)",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 3.15",
+    "code": "MF 3.15",
+    "title": "Establish a service level agreement (SLA)",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.3",
+    "code": "MF 3.3",
+    "title": "Measure and analyze the service’s fitness-for-purpose",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 3.16",
+    "code": "MF 3.16",
+    "title": "Determine the due date",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.4",
+    "code": "MF 3.4",
+    "title": "Use cumulative flow diagrams to monitor queues",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 3.17",
+    "code": "MF 3.17",
+    "title": "Forecast delivery",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.5",
+    "code": "MF 3.5",
+    "title": "Use Little’s Law",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 3.18",
+    "code": "MF 3.18",
+    "title": "Apply qualitative Real Options Thinking",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.6",
+    "code": "MF 3.6",
+    "title": "Report rudimentary flow efficiency",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 3.19",
+    "code": "MF 3.19",
+    "title": "Implement Service Delivery Manager role",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.7",
+    "code": "MF 3.7",
+    "title": "Gradually eliminate infinite buffers",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 3.20",
+    "code": "MF 3.20",
+    "title": "Implement Service Request Manager role",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.8",
+    "code": "MF 3.8",
+    "title": "Actively close upstream requests that meet the discard criteria",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 4.7",
+    "code": "MF 4.7",
+    "title": "Determine a reference class data set",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.9",
+    "code": "MF 3.9",
+    "title": "Analyze & report on aborted work",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 4.8",
+    "code": "MF 4.8",
+    "title": "Forecast using reference classes, Monte Carlo simulations and other models",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.10",
+    "code": "MF 3.10",
+    "title": "Use classes of service to affect selection",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 4.9",
+    "code": "MF 4.9",
+    "title": "Allocate capacity by work type",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 3.11",
+    "code": "MF 3.11",
+    "title": "Analyze and report on failure demand",
+    "level": 3,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 4.10",
+    "code": "MF 4.10",
+    "title": "Allocate capacity by class of service",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 4.1",
+    "code": "MF 4.1",
+    "title": "Collect and report detailed flow efficiency analysis",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 4.11",
+    "code": "MF 4.11",
+    "title": "Assess forecasting models for robustness",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 4.2",
+    "code": "MF 4.2",
+    "title": "Use explicit buffers to smooth flow",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 4.12",
+    "code": "MF 4.12",
+    "title": "Make appropriate use of forecasting",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 4.3",
+    "code": "MF 4.3",
+    "title": "Analyze to anticipate dependencies",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 4.13",
+    "code": "MF 4.13",
+    "title": "Use statistical methods for decision making",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 4.4",
+    "code": "MF 4.4",
+    "title": "Establish refutable versus irrefutable demand",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MF 5.1",
+    "code": "MF 5.1",
+    "title": "Utilize hybrid fixed service teams together with a flexible labor pool",
+    "level": 5,
+    "category": "Operational Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MF 4.5",
+    "code": "MF 4.5",
+    "title": "Use classes of dependency management according to cost of delay",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "T-MF 4.6",
+    "code": "MF 4.6",
+    "title": "Use classes of booking in a dynamic reservation system",
+    "level": 4,
+    "category": "Operational Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 0.1",
+    "code": "XP 0.1",
+    "title": "Make the rules for the individual kanban explicit",
+    "level": 0,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-XP 1.1",
+    "code": "XP 1.1",
+    "title": "Discover initial policies",
+    "level": 1,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 1.2",
+    "code": "XP 1.2",
+    "title": "Define basic policies",
+    "level": 1,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-XP 2.1",
+    "code": "XP 2.1",
+    "title": "Define flow-related metrics (e.g., lead time)",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 2.3",
+    "code": "XP 2.3",
+    "title": "Define policies for managing aging WIP",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-XP 2.2",
+    "code": "XP 2.2",
+    "title": "Define basic service policies",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 2.4",
+    "code": "XP 2.4",
+    "title": "Define policies for managing defects and other rework types",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-XP 3.0",
+    "code": "XP 3.0",
+    "title": "Define policies for managing blocking issues",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 2.5",
+    "code": "XP 2.5",
+    "title": "Define basic policies for dependency management",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-XP 3.1",
+    "code": "XP 3.1",
+    "title": "Define Fit-for-Purpose–related metrics",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 3.6",
+    "code": "XP 3.6",
+    "title": "Establish a commitment point",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-XP 3.2",
+    "code": "XP 3.2",
+    "title": "Explicitly define request acceptance criteria",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 3.7",
+    "code": "XP 3.7",
+    "title": "Explicitly define pull criteria",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-XP 3.3",
+    "code": "XP 3.3",
+    "title": "Define policies for discarding requests upstream",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 3.8",
+    "code": "XP 3.8",
+    "title": "Establish a delivery point and a delivery buffer",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-XP 3.4",
+    "code": "XP 3.4",
+    "title": "Define criteria for aborted work",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 3.9",
+    "code": "XP 3.9",
+    "title": "Establish customer expectations for each work item or a class ofwork items",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-XP 3.5",
+    "code": "XP 3.5",
+    "title": "Define basic classes of service based on qualitative cost of delay",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 3.10",
+    "code": "XP 3.10",
+    "title": "Explicitely define fitness-for-purpose and manage it based on metrics",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-FL 1.1",
+    "code": "FL 1.1",
+    "title": "Conduct Team Kanban Meeting",
+    "level": 1,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 4.1",
+    "code": "XP 4.1",
+    "title": "Establish demand-shaping policies",
+    "level": 4,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-FL 1.4",
+    "code": "FL 1.4",
+    "title": "Conduct Kanban Team Policy Board Meeting",
+    "level": 1,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-XP 4.2",
+    "code": "XP 4.2",
+    "title": "Establish SLA on dependent services",
+    "level": 4,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-FL 2.1",
+    "code": "FL 2.1",
+    "title": "Conduct Workflow Replenishment Meeting",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 0.1",
+    "code": "FL 0.1",
+    "title": "Engage in individual reflection",
+    "level": 0,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-FL 3.0",
+    "code": "FL 3.0",
+    "title": "Conduct Blocker Clustering",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 1.2",
+    "code": "FL 1.2",
+    "title": "Conduct Team Retrospective",
+    "level": 1,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-FL 3.1",
+    "code": "FL 3.1",
+    "title": "Conduct Improvement Suggestions Review",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 1.3",
+    "code": "FL 1.3",
+    "title": "Conduct Team Replenishment Meeting",
+    "level": 1,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-FL 4.1",
+    "code": "FL 4.1",
+    "title": "Conduct Organizational Risk Review",
+    "level": 4,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 2.2",
+    "code": "FL 2.2",
+    "title": "Conduct Workflow Kanban Meeting",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-FL 4.2",
+    "code": "FL 4.2",
+    "title": "Conduct Operations Review",
+    "level": 4,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 2.3",
+    "code": "FL 2.3",
+    "title": "Conduct Flow Review",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-FL 4.3",
+    "code": "FL 4.3",
+    "title": "Conduct Marketing Strategy Review",
+    "level": 4,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 3.2",
+    "code": "FL 3.2",
+    "title": "Conduct Replenishment Meeting",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-IE 2.1",
+    "code": "IE 2.1",
+    "title": "Identify sources of dissatisfaction",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 3.3",
+    "code": "FL 3.3",
+    "title": "Conduct Delivery Planning Meeting",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-IE 3.1",
+    "code": "IE 3.1",
+    "title": "Solicit change and improvement suggestions",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 3.4",
+    "code": "FL 3.4",
+    "title": "Conduct Service Delivery Review (downstream)",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-IE 3.2",
+    "code": "IE 3.2",
+    "title": "Identify transaction and coordination costs",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 3.5",
+    "code": "FL 3.5",
+    "title": "Conduct Service Request Review (upstream)",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-IE 4.1",
+    "code": "IE 4.1",
+    "title": "Develop qualitative understanding of chance versus assignable cause for process performance variation",
+    "level": 4,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 3.6",
+    "code": "FL 3.6",
+    "title": "Conduct Service Risk Review",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-IE 5.1",
+    "code": "IE 5.1",
+    "title": "Identify bottlenecks",
+    "level": 5,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-FL 5.1",
+    "code": "FL 5.1",
+    "title": "Conduct Organizational Strategy Review",
+    "level": 5,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-IE 5.2",
+    "code": "IE 5.2",
+    "title": "Identify impact of shared resources",
+    "level": 5,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-IE 2.2",
+    "code": "IE 2.2",
+    "title": "Identify sources of delay",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-IE 5.3",
+    "code": "IE 5.3",
+    "title": "Develop quantitative understanding of common vs special cause for process performance variation",
+    "level": 5,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-IE 2.3",
+    "code": "IE 2.3",
+    "title": "Revise problematic policies",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 1.1",
+    "code": "MT 1.1",
+    "title": "Per-person WIP",
+    "level": 1,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-IE 2.4",
+    "code": "IE 2.4",
+    "title": "Define actions to develop basic understanding of the process and improve flow",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 2.1",
+    "code": "MT 2.1",
+    "title": "System Lead Time",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-IE 3.3",
+    "code": "IE 3.3",
+    "title": "Analyze blocker likelihood and impact",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 2.2",
+    "code": "MT 2.2",
+    "title": "Customer Lead Time",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-IE 3.4",
+    "code": "IE 3.4",
+    "title": "Analyze lead time tail risk",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 2.3",
+    "code": "MT 2.3",
+    "title": "Basic CFD",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-IE 3.5",
+    "code": "IE 3.5",
+    "title": "After-meetings: Discuss a problem spontaneously; then bring it to the Service Delivery Review",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 2.4",
+    "code": "MT 2.4",
+    "title": "Arrival Rate at the System Level",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-IE 5.4",
+    "code": "IE 5.4",
+    "title": "Exploit, subordinate to, and elevate bottlenecks",
+    "level": 5,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 2.5",
+    "code": "MT 2.5",
+    "title": "Delivery Rate at the System Level",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-IE 5.5",
+    "code": "IE 5.5",
+    "title": "Exploit, subordinate to, and elevate shared resources",
+    "level": 5,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 3.1",
+    "code": "MT 3.1",
+    "title": "Activity-based WIP",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-IE 5.6",
+    "code": "IE 5.6",
+    "title": "After meetings: Discuss – Suggest – Take actions – Seek forgiveness",
+    "level": 5,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 3.2",
+    "code": "MT 3.2",
+    "title": "Standard CFD",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-IE 6.1",
+    "code": "IE 6.1",
+    "title": "After meetings: Take congruent actions with confidence",
+    "level": 6,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 3.3",
+    "code": "MT 3.3",
+    "title": "Rudimentary Flow Efficiency",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MT 0.1",
+    "code": "MT 0.1",
+    "title": "Individual Lead Time",
+    "level": 0,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 3.4",
+    "code": "MT 3.4",
+    "title": "Arrival Rate at the Workflow State Level",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MT 0.2",
+    "code": "MT 0.2",
+    "title": "Individual WIP",
+    "level": 0,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 3.5",
+    "code": "MT 3.5",
+    "title": "Delivery Rate at the Workflow State Level",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MT 1.2",
+    "code": "MT 1.2",
+    "title": "Team Lead Time",
+    "level": 1,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 3.6",
+    "code": "MT 3.6",
+    "title": "Blocker-related Metrics",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MT 1.3",
+    "code": "MT 1.3",
+    "title": "Team WIP",
+    "level": 1,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 3.7",
+    "code": "MT 3.7",
+    "title": "Quality Metrics",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MT 2.6",
+    "code": "MT 2.6",
+    "title": "CONWIP",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 4.1",
+    "code": "MT 4.1",
+    "title": "Advanced CFD",
+    "level": 4,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MT 2.7",
+    "code": "MT 2.7",
+    "title": "Work Item Age",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "T-MT 4.2",
+    "code": "MT 4.2",
+    "title": "Detailed Flow Efficiency",
+    "level": 4,
+    "category": "Managerial Practices",
+    "kind": "Transition"
+  },
+  {
+    "id": "C-MT 2.8",
+    "code": "MT 2.8",
+    "title": "Due Date Performance",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "C-MT 2.9",
+    "code": "MT 2.9",
+    "title": "On-Time Delivery",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "C-MT 2.10",
+    "code": "MT 2.10",
+    "title": "Defects and Rework",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "C-MT 2.11",
+    "code": "MT 2.11",
+    "title": "Abandoned Work",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "C-MT 2.12",
+    "code": "MT 2.12",
+    "title": "Lead Time Threshold Expectation",
+    "level": 2,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "C-MT 3.8",
+    "code": "MT 3.8",
+    "title": "Lead Time and Option Expiry in Upstream",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "C-MT 3.9",
+    "code": "MT 3.9",
+    "title": "Discarded Work",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "C-MT 3.10",
+    "code": "MT 3.10",
+    "title": "Aborted Work",
+    "level": 3,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  },
+  {
+    "id": "C-MT 4.3",
+    "code": "MT 4.3",
+    "title": "Monte Carlo Simulation",
+    "level": 4,
+    "category": "Managerial Practices",
+    "kind": "Consolidation"
+  }
+]

@@ -58,6 +58,31 @@ export function makeScenarios(seed) {
 export const phaseForDay = day => Math.min(3,Math.floor((day-1)/10)+1);
 export const localDay = day => (day-1)%10;
 export function limitFor(state) {return state.settings[phaseForDay(state.day)-1]?.wip||3;}
+// Backlog order is explicit and independent of work status. New intake is appended.
+export function orderedBacklog(state) {
+ const queue=state.tasks.filter(t=>t.status===0);
+ const ranks=new Map((state.backlogOrder||[]).map((id,i)=>[id,i]));
+ return [...queue].sort((a,b)=>(ranks.get(a.id)??Number.MAX_SAFE_INTEGER)-(ranks.get(b.id)??Number.MAX_SAFE_INTEGER) || a.id-b.id);
+}
+export function reorderBacklog(state,id,newIndex){
+ if(state.gate!=='replenishment')return state;
+ const ids=orderedBacklog(state).map(t=>t.id),old=ids.indexOf(id);
+ if(old<0||newIndex<0||newIndex>=ids.length||old===newIndex)return state;
+ ids.splice(old,1);ids.splice(newIndex,0,id);
+ const next=structuredClone(state);next.backlogOrder=ids;
+ return next;
+}
+export function completeReplenishment(state,note=''){
+ if(state.gate!=='replenishment')return state;
+ const next=structuredClone(state);
+ const top=orderedBacklog(next).slice(0,5).map(t=>`#${t.id}`).join(', ');
+ const reason=String(note||'').trim().slice(0,500);
+ next.events.push({day:next.day,who:null,text:`Replenishment (${next.replenishmentSource==='phase'?'phase start':'scenario response'}) · Priority order: ${top||'no backlog'}${reason?' · Rationale: '+reason:''}`,replenishment:true,reason});
+ next.gate=next.replenishmentReturn||'scenario';next.replenishmentReturn=null;next.replenishmentSource=null;
+ return next;
+}
+// Scenario changes that justify an immediate, optional replenishment conversation.
+export const REPLENISHMENT_SCENARIOS=new Set(['urgent','demand','surge','priority','expedite','hidden_work','split','scope']);
 export function tally(tasks) {return {backlog:tasks.filter(t=>t.status===0).length,working:tasks.filter(t=>t.status===1).length,review:tasks.filter(t=>t.status===2).length,done:tasks.filter(t=>t.status===3).length,blocked:tasks.filter(t=>t.blocked).length,urgent:tasks.filter(t=>t.urgent&&t.status!==3).length};}
 export function completedPlayers(state) {return Object.keys(state.turns||{}).filter(p=>state.turns[p]?.done).length;}
 export function cardFor(state,p) {return state.cards[localDay(state.day)]?.[p-1];}
@@ -69,11 +94,10 @@ export function legal(state,p) {
  const own=tasks.filter(t=>t.owner===p && [1,2].includes(t.status));
  const activeOwn=own.filter(t=>!t.blocked);
  const ownActions=own.flatMap(t=>t.blocked?[{type:'unblock',id:t.id}]:t.status===2||freeReview?[{type:'advance',id:t.id}]:[]);
- let pulls=freeWorking?tasks.filter(t=>t.status===0).map(t=>({type:'pull',id:t.id})):[];
- // A replenishment policy makes urgent work first in queue, but never bypasses WIP.
- if(state.settings[phaseForDay(state.day)-1]?.practice==='replenishment' && pulls.some(x=>tasks.find(t=>t.id===x.id)?.urgent)) {
-   pulls=pulls.filter(x=>tasks.find(t=>t.id===x.id)?.urgent);
- }
+ const queue=orderedBacklog(state);
+ // Only the highest-priority backlog item is eligible for a normal pull.
+ // An explicit, logged exception can be used to select a lower-priority item.
+ const pulls=freeWorking&&queue.length?[{type:'pull',id:queue[0].id}]:[];
  const help=tasks.filter(t=>t.owner!==null&&t.owner!==p&&[1,2].includes(t.status)).flatMap(t=>t.blocked?[{type:'helpUnblock',id:t.id}]:t.status===2||freeReview?[{type:'helpAdvance',id:t.id}]:[]);
  // Reduced-capacity scenario: this person cannot start or advance their own tasks,
  // but can still help another player (for example, unblock their work).
@@ -109,14 +133,29 @@ export function takeAction(state,p,type,id){const permitted=legal(state,p).some(
  next.events.push({day:next.day,who:p,text:label});
  return next;
 }
+// Explicitly justify bypassing the highest-priority item. Never bypass WIP/card rules.
+export function pullWithException(state,p,id,reason){
+ const text=String(reason||'').trim();
+ if(text.length<5||text.length>500)return state;
+ const queue=orderedBacklog(state);
+ if(!queue.some(t=>t.id===id)||queue[0]?.id===id)return state;
+ if(!legal(state,p).some(a=>a.type==='pull'))return state;
+ const next=structuredClone(state);
+ const t=next.tasks.find(t=>t.id===id);
+ t.status=1;t.owner=p;t.started=next.day;
+ const turn=next.turns[p]||{done:false,step:'block'};
+ turn.done=true;next.turns[p]=turn;
+ next.events.push({day:next.day,who:p,text:`Pull priority exception · Task #${id} was selected instead of #${queue[0].id} · Reason: ${text}`,priorityException:true,reason:text});
+ return next;
+}
 export function phaseMetric(state, phase){
  const end=(phase*10),snap=state.snapshots.find(x=>x.day===end), phaseSnap=state.snapshots.filter(x=>x.day>=(phase-1)*10+1&&x.day<=end);
  const completed=snap?.counts.done??0;const lead=snap? snap.tasks.filter(t=>t.status===3&&t.started!==null).map(t=>t.finished-t.started+1):[];
  const sorted=[...lead].sort((a,b)=>a-b);const percentile=p=>sorted.length?sorted[Math.min(sorted.length-1,Math.ceil(p*sorted.length)-1)]:null;
  return {completed,rate:completed/10,blocked:snap?.counts.blocked??0,wip:(snap?.counts.working??0)+(snap?.counts.review??0),backlog:snap?.counts.backlog??0,leadAverage:lead.length?lead.reduce((a,b)=>a+b,0)/lead.length:null,p85:percentile(.85),daily:phaseSnap.map(x=>({day:x.day-(phase-1)*10,done:x.counts.done})),events:state.events.filter(x=>x.day>(phase-1)*10&&x.day<=end).length};
 }
-export function createGame(players,names,seed=Date.now()%1000000000){const tasks=newTasks(1);return {version:1,players,names:names.slice(0,players).map((n,i)=>n.trim()||`Player ${i+1}`),seed,day:1,gate:'phase-setup',cards:makeDeck(seed,players),scenarios:makeScenarios(seed),tasks,turns:{},settings:[null,null,null],reflect:[null,null,null],events:[],snapshots:[],unavailable:null,scenarioDecision:null};}
-export function choosePhase(state,wip,practice,reason){const next=structuredClone(state),idx=phaseForDay(next.day)-1;next.settings[idx]={wip,practice,reason};next.gate='scenario';return next;}
+export function createGame(players,names,seed=Date.now()%1000000000){const tasks=newTasks(1);return {version:1,players,names:names.slice(0,players).map((n,i)=>n.trim()||`Player ${i+1}`),seed,day:1,gate:'phase-setup',cards:makeDeck(seed,players),scenarios:makeScenarios(seed),tasks,turns:{},settings:[null,null,null],reflect:[null,null,null],events:[],snapshots:[],unavailable:null,scenarioDecision:null,backlogOrder:tasks.map(t=>t.id),replenishmentReturn:null,replenishmentSource:null};}
+export function choosePhase(state,wip,practice,reason){const next=structuredClone(state),idx=phaseForDay(next.day)-1;next.settings[idx]={wip,practice,reason};next.gate='replenishment';next.replenishmentReturn='scenario';next.replenishmentSource='phase';return next;}
 export function resolveScenario(state,decision){
  if(state.gate!=='scenario')return state;
  const sc=state.scenarios[state.day-1];
@@ -246,7 +285,9 @@ export function resolveScenario(state,decision){
  }
  next.scenarioDecision={day:next.day,scenario:sc.key,decision,change,kind:sc.kind};
  next.events.push({day:next.day,who:null,text:`Scenario · ${sc.title}: ${decision} — ${change}`,scenarioKey:sc.key,scenarioKind:sc.kind,scenarioDecision:decision,scenarioDetail:change,...(sc.key==='quality'?{qualityDecision:decision,qualityDetail:change}:{})});
- next.gate='play';return next;
+ next.gate=REPLENISHMENT_SCENARIOS.has(sc.key)?'replenishment':'play';
+ if(next.gate==='replenishment'){next.replenishmentSource='scenario';next.replenishmentReturn='play';}
+ return next;
 }
 export function endDay(state){if(state.gate!=='play'||completedPlayers(state)!==state.players)return state;
  const next=structuredClone(state);next.snapshots.push({day:next.day,tasks:structuredClone(next.tasks),counts:tally(next.tasks),wip:limitFor(next),scenario:next.scenarios[next.day-1].title,decision:next.scenarioDecision?.decision});
@@ -254,5 +295,5 @@ export function endDay(state){if(state.gate!=='play'||completedPlayers(state)!==
  return next;
 }
 export function submitReflection(state,reflection){if(state.gate!=='reflection')return state;const next=structuredClone(state),p=phaseForDay(next.day);next.reflect[p-1]=reflection;
- if(next.day===30){next.gate='finished';}else{next.day++;next.tasks=newTasks(p+1);next.turns={};next.unavailable=null;next.scenarioDecision=null;next.gate='phase-setup';}return next;
+ if(next.day===30){next.gate='finished';}else{next.day++;next.tasks=newTasks(p+1);next.backlogOrder=next.tasks.map(t=>t.id);next.turns={};next.unavailable=null;next.scenarioDecision=null;next.gate='phase-setup';}return next;
 }

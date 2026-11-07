@@ -19,7 +19,7 @@ export const SCENARIO_TEMPLATES = [
  {key:'urgent',title:'Unexpected urgent request',category:'Demand',story:'A stakeholder asks for urgent work while the team already has commitments.',prompt:'How will the team handle this request?',choices:[['protect','Protect current commitments'],['prioritize','Add it to the priority queue']]},
  {key:'dependency',title:'External dependency',category:'Dependency',story:'An active task is waiting for another group to provide a critical answer.',prompt:'What will the team do about the dependency?',choices:[['coordinate','Make the blocker visible and coordinate'],['swarm','Make the blocker visible and prioritize help']]},
  {key:'capacity',title:'Reduced capacity',category:'Capacity',story:'A teammate has reduced capacity for their own work today. They can still support another player when a legal help move exists.',prompt:'How will the team adapt?',choices:[['focus','Finish what is already in progress'],['replan','Replan today’s work together']]},
- {key:'quality',title:'Defect discovered after completion',category:'Quality',story:'A defect is reported against an item that has already reached Done. Completed work stays Done; new corrective work must enter through the backlog.',prompt:'How will the team respond?',choices:[['bug','Create a linked bug ticket'],['discuss','Create a linked bug ticket and review quality policies']]},
+ {key:'quality',title:'Defect discovered after completion',category:'Quality',story:'A customer reports a defect in work the team already marked Done. The team must decide how to make the corrective work visible.',prompt:'What should the team do?',choices:[['return','Move the completed ticket back into Review'],['bug','Create a new bug ticket linked to the completed task']]},
  {key:'forecast',title:'Stakeholder asks for a forecast',category:'Forecast',story:'Someone asks how much work can be finished by the end of the phase.',prompt:'Which expectation will the team set?',choices:[['range','Use observed evidence and uncertainty'],['target','Commit to an aspirational target']]},
  {key:'policy',title:'Policy under pressure',category:'Policy',story:'A teammate proposes starting additional work even though the workflow is crowded.',prompt:'What does the team decide?',choices:[['respect','Respect the agreed WIP policy'],['revisit','Discuss changing the policy at reflection']]},
  {key:'demand',title:'New work arrives',category:'Intake',story:'Another customer request arrives. The team must decide how to acknowledge it.',prompt:'What should happen next?',choices:[['queue','Add it to the ordinary queue'],['replenish','Revisit prioritization together']]},
@@ -108,14 +108,30 @@ export function resolveScenario(state,decision){if(state.gate!=='scenario')retur
  }else if(sc.key==='quality'){
    if(completed.length){
     const source=completed[Math.floor(r()*completed.length)];
-    const id=Math.max(...next.tasks.map(t=>t.id))+1;
-    // Finished work stays Done: defects are separate work items linked to the original.
-    // The bug enters To-Do and must follow normal pull, WIP, card and completion rules.
-    next.tasks.push({id,title:`Bug: Defect in Task ${source.id}`,type:'bug',sourceId:source.id,status:0,owner:null,blocked:false,started:null,finished:null,urgent:false,blockedSince:null,rework:0});
-    change=`Bug #${id} created in To-Do, linked to completed Task #${source.id}. The original stays Done. ${decision==='discuss'?'The team will also discuss its quality policies.':'Normal replenishment and WIP policies apply.'}`;
-   } else change='No completed task exists to link a defect to; no ticket was created and the team can discuss its quality policy.';
+    if(decision==='return'){
+      // Intentional learning alternative: move a Done item backward into Review.
+      // Do NOT enforce the normal WIP entry rule here. The overload is the
+      // consequence the team will reflect on, not an error to silently prevent.
+      source.status=2;
+      source.finished=null;
+      source.rework=(source.rework||0)+1;
+      const reviewCount=next.tasks.filter(t=>t.status===2).length;
+      const limit=limitFor(next);
+      const breach=reviewCount>limit;
+      change=`Task #${source.id} moved backward from Done to Review. Review now has ${reviewCount}/${limit} items${breach?' — ABOVE WIP LIMIT':''}. Previously reported completion is reversed; the original item's lead time now includes rework. Discuss this choice in the phase reflection.`;
+    }else if(decision==='bug'){
+      // Keep the original completion trace intact. Model corrective work as
+      // a linked new item entering the normal workflow, governed by WIP.
+      const id=Math.max(...next.tasks.map(t=>t.id))+1;
+      next.tasks.push({id,title:`Bug: Defect in Task ${source.id}`,type:'bug',sourceId:source.id,status:0,owner:null,blocked:false,started:null,finished:null,urgent:false,blockedSince:null,rework:0});
+      change=`Bug #${id} created in To-Do, linked to completed Task #${source.id}. The original remains Done. The bug follows normal pull and WIP rules.`;
+    }else{
+      return state;
+    }
+   }else change='No completed item exists yet. No defect ticket could be selected; discuss the two policies at reflection.';
+
  }
- next.scenarioDecision={day:next.day,decision,change};next.events.push({day:next.day,who:null,text:`Scenario · ${sc.title}: ${decision} — ${change}`});next.gate='play';return next;
+ next.scenarioDecision={day:next.day,decision,change};next.events.push({day:next.day,who:null,text:`Scenario · ${sc.title}: ${decision} — ${change}`,...(sc.key==='quality'?{qualityDecision:decision,qualityDetail:change}:{})});next.gate='play';return next;
 }
 export function endDay(state){if(state.gate!=='play'||completedPlayers(state)!==state.players)return state;
  const next=structuredClone(state);next.snapshots.push({day:next.day,tasks:structuredClone(next.tasks),counts:tally(next.tasks),wip:limitFor(next),scenario:next.scenarios[next.day-1].title,decision:next.scenarioDecision?.decision});

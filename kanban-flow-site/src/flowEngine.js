@@ -56,7 +56,9 @@ export function legal(state,p) {
  if(turn.step==='block'){
    const blocks=activeOwn.map(t=>({type:'block',id:t.id}));if(blocks.length)return blocks;
  }
- const second=[...pulls,...help];return second.length?second:[{type:'pass',id:null}];
+ // Black card step 2: pulling available work is mandatory; helping is a fallback only when pulling is impossible.
+ if(pulls.length)return pulls;
+ return help.length?help:[{type:'pass',id:null}];
 }
 export function canDrop(state,p,id,status){const task=state.tasks.find(t=>t.id===id);if(!task)return null;
  const options=legal(state,p), next=task.status+1;

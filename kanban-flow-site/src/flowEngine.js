@@ -18,7 +18,7 @@ export function newTasks(phase) {return Array.from({length:30},(_,i)=>({id:(phas
 export const SCENARIO_TEMPLATES = [
  {key:'urgent',title:'Unexpected urgent request',category:'Demand',story:'A stakeholder asks for urgent work while the team already has commitments.',prompt:'How will the team handle this request?',choices:[['protect','Protect current commitments'],['prioritize','Add it to the priority queue']]},
  {key:'dependency',title:'External dependency',category:'Dependency',story:'An active task is waiting for another group to provide a critical answer.',prompt:'What will the team do about the dependency?',choices:[['coordinate','Make the blocker visible and coordinate'],['swarm','Make the blocker visible and prioritize help']]},
- {key:'capacity',title:'Reduced capacity',category:'Capacity',story:'A teammate is unavailable for today; assuming everyone is always at full capacity is risky.',prompt:'How will the team adapt?',choices:[['focus','Finish what is already in progress'],['replan','Replan today’s work together']]},
+ {key:'capacity',title:'Reduced capacity',category:'Capacity',story:'A teammate has reduced capacity for their own work today. They can still support another player when a legal help move exists.',prompt:'How will the team adapt?',choices:[['focus','Finish what is already in progress'],['replan','Replan today’s work together']]},
  {key:'quality',title:'Rework discovered',category:'Quality',story:'A completed item needs more attention after a defect is found.',prompt:'How will the team respond?',choices:[['review','Bring it back into Review'],['discuss','Bring it back and discuss quality policies']]},
  {key:'forecast',title:'Stakeholder asks for a forecast',category:'Forecast',story:'Someone asks how much work can be finished by the end of the phase.',prompt:'Which expectation will the team set?',choices:[['range','Use observed evidence and uncertainty'],['target','Commit to an aspirational target']]},
  {key:'policy',title:'Policy under pressure',category:'Policy',story:'A teammate proposes starting additional work even though the workflow is crowded.',prompt:'What does the team decide?',choices:[['respect','Respect the agreed WIP policy'],['revisit','Discuss changing the policy at reflection']]},
@@ -39,7 +39,6 @@ export function legal(state,p) {
  if(state.gate!=='play'||!p||p<1||p>state.players)return [];
  const turn=state.turns[p]||{done:false,step:'block'};
  if(turn.done)return [];
- if(state.unavailable===p)return [{type:'pass',id:null}];
  const {tasks}=state, wip=limitFor(state), counts=tally(tasks), freeWorking=counts.working<wip,freeReview=counts.review<wip;
  const own=tasks.filter(t=>t.owner===p && [1,2].includes(t.status));
  const activeOwn=own.filter(t=>!t.blocked);
@@ -50,6 +49,10 @@ export function legal(state,p) {
    pulls=pulls.filter(x=>tasks.find(t=>t.id===x.id)?.urgent);
  }
  const help=tasks.filter(t=>t.owner!==null&&t.owner!==p&&[1,2].includes(t.status)).flatMap(t=>t.blocked?[{type:'helpUnblock',id:t.id}]:t.status===2||freeReview?[{type:'helpAdvance',id:t.id}]:[]);
+ // Reduced-capacity scenario: this person cannot start or advance their own tasks,
+ // but can still help another player (for example, unblock their work).
+ // Blocked work still counts toward WIP; help never bypasses review capacity.
+ if(state.unavailable===p)return help.length?help:[{type:'pass',id:null}];
  const special=state.settings[phaseForDay(state.day)-1]?.practice==='swarm';
  const card=cardFor(state,p);
  if(card?.red){let a=[...ownActions,...pulls];if(!a.length||special)a=[...a,...help];return a.length?a:[{type:'pass',id:null}];}
@@ -101,7 +104,7 @@ export function resolveScenario(state,decision){if(state.gate!=='scenario')retur
    if(active.length){const t=active[Math.floor(r()*active.length)];t.blocked=true;t.blockedSince=next.day;change=`Task ${t.id} became blocked. A legal unblock or help action is needed.`;}
    else change='No active unblocked task exists, so no new blocker was applied.';
  }else if(sc.key==='capacity'){
-   next.unavailable=1+Math.floor(r()*next.players);change=`${next.names[next.unavailable-1]} is unavailable for today and can only pass.`;
+   next.unavailable=1+Math.floor(r()*next.players);change=`${next.names[next.unavailable-1]} has reduced capacity for their own work today. They may help a teammate with a legal move; otherwise they pass.`;
  }else if(sc.key==='quality'){
    if(completed.length){const t=completed[Math.floor(r()*completed.length)];
     // A rework item returns to Review; WIP capacity can temporarily be exceeded, and subsequent moves must respect the limit.

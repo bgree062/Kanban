@@ -72,12 +72,21 @@ export function reorderBacklog(state,id,newIndex){
  const next=structuredClone(state);next.backlogOrder=ids;
  return next;
 }
+// Teams may request a replenishment review before anyone begins their daily card actions.
+export function openReplenishment(state){
+ if(state.gate!=='play'||Object.keys(state.turns||{}).length>0)return state;
+ const next=structuredClone(state);
+ next.gate='replenishment';
+ next.replenishmentSource='manual';
+ next.replenishmentReturn='play';
+ return next;
+}
 export function completeReplenishment(state,note=''){
  if(state.gate!=='replenishment')return state;
  const next=structuredClone(state);
  const top=orderedBacklog(next).slice(0,5).map(t=>`#${t.id}`).join(', ');
  const reason=String(note||'').trim().slice(0,500);
- next.events.push({day:next.day,who:null,text:`Replenishment (${next.replenishmentSource==='phase'?'phase start':'scenario response'}) · Priority order: ${top||'no backlog'}${reason?' · Rationale: '+reason:''}`,replenishment:true,reason});
+ next.events.push({day:next.day,who:null,text:`Replenishment (${next.replenishmentSource==='phase'?'phase start':next.replenishmentSource==='manual'?'team-requested':'scenario response'}) · Priority order: ${top||'no backlog'}${reason?' · Rationale: '+reason:''}`,replenishment:true,reason});
  next.gate=next.replenishmentReturn||'scenario';next.replenishmentReturn=null;next.replenishmentSource=null;
  return next;
 }

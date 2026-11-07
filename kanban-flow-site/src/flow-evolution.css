@@ -29,3 +29,8 @@
 .fe-exception-form .fe-actions button{font-size:10px;border:1px solid #b8a67f;background:white;color:#153c52;border-radius:5px;padding:6px 8px;cursor:pointer}
 .fe-exception-form .fe-actions button:disabled{opacity:.5;cursor:not-allowed}
 @media(max-width:600px){.fe-priority-row{gap:6px;padding:8px}.fe-priority-handle{display:none}.fe-priority-buttons button{padding:5px 6px}.fe-priority-desc{font-size:11px}}
+
+/* Make replenishment easy to find during daily play, before card actions begin. */
+.fe-reprioritize-control{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.fe-reprioritize-control small{font-size:11px;color:#687f90}
+@media(max-width:800px){.fe-reprioritize-control{align-items:stretch;width:100%}.fe-reprioritize-control .fe-btn{width:100%}}

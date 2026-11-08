@@ -10,7 +10,22 @@ const initialHistory=()=>[{day:0,tasks:freshBoard(),events:[]}];
 const formatDays=x=>x===null?'—':`${Number.isInteger(x)?x:x.toFixed(1)}d`;
 const classCard=(c)=>'playing-card '+(c.red?'red':'black');
 function Stat({label,value}){return <div className="metric"><b>{value}</b><span>{label}</span></div>}
-function Nav(){return <header className="nav"><div className="wrap nav-inner"><div className="brand"><Layers3 size={25}/><div><b>Kanban Flow Lab</b><small>Leadership through experimentation</small></div></div><nav><a href="#home">Home</a><a href="#facilitated">Facilitated</a><a href="https://kanban-multiplayer.vercel.app" target="_blank" rel="noopener noreferrer">Collaborative <ExternalLink size={12}/></a><a href="#flow-evolution">Flow Evolution Lab</a><a href="#flow-assessment">Flow Assessment</a><a href="#about-me">About Me</a></nav></div></header>}
+function Nav({page}){
+  const activeLink={fontWeight:800,color:'#09394F',borderBottom:'2px solid #C88724'};
+  const linkStyle={display:'inline-flex',alignItems:'center',gap:4,padding:'8px 0 9px',borderBottom:'2px solid transparent',textDecoration:'none'};
+  const navItems=[
+    {key:'home',label:'Home',href:'#home'},
+    {key:'facilitated',label:'Facilitated',href:'#facilitated'},
+    {key:'collaborative',label:'Collaborative',href:'https://kanban-multiplayer.vercel.app',external:true},
+    {key:'evolution',label:'Flow Evolution Lab',href:'#flow-evolution'},
+    {key:'assessment',label:'Flow Assessment',href:'#flow-assessment'},
+    {key:'about',label:'About Me',href:'#about-me'}
+  ];
+  return <header className="nav"><div className="wrap nav-inner"><div className="brand"><Layers3 size={25}/><div><b>Kanban Flow Lab</b><small>Leadership through experimentation</small></div></div><nav aria-label="Main navigation">{navItems.map(item=>{
+    const selected=page===item.key;
+    return <a key={item.key} href={item.href} style={{...linkStyle,...(selected?activeLink:{})}} aria-current={selected?'page':undefined} target={item.external?'_blank':undefined} rel={item.external?'noopener noreferrer':undefined}>{item.label}{item.external&&<ExternalLink size={12}/>}</a>;
+  })}</nav></div></header>;
+}
 function Intro(){return <section className="hero"><div className="wrap"><div className="eyebrow">INTERACTIVE WORKSHOP</div><h1>Stop Starting.<br/><em>Start Finishing.</em></h1><p>Two ways to experience the power of flow. Choose a guided workshop or collaborate with your team in real time.</p></div></section>}
 function ChooseSimulation(){return <section className="wrap choose-simulation" id="choose-simulation" aria-label="Choose your simulation"><div className="eyebrow dark">THREE WAYS TO EXPERIENCE FLOW</div><h2>Choose your simulation experience</h2><p className="muted">Start with foundational flow, collaborate across devices, or challenge an experienced team with changing demand and evolutionary decisions.</p><div className="choose-grid"><article className="choose-card"><div className="choose-icon"><Monitor size={25}/></div><h3>Facilitated Simulation</h3><p className="choose-subtitle">One screen. Shared decisions. Guided learning.</p><p>Ideal for classrooms and workshops. One person operates the board while participants explore flow, WIP limits, and team behaviors together. Also supports individual and automatic practice.</p><a className="btn primary" href="#facilitated">Explore Facilitated <ArrowRight size={16}/></a></article><article className="choose-card"><div className="choose-icon"><Users size={25}/></div><h3>Collaborative Simulation</h3><p className="choose-subtitle">Multiple devices. One board. Real teamwork.</p><p>Ideal for distributed teams and interactive workshops. Join one shared board as a player, or create a room as a facilitator and invite students to participate from their own computers.</p><a className="btn primary" href="https://kanban-multiplayer.vercel.app" target="_blank" rel="noopener noreferrer">Explore Collaborative <ExternalLink size={16}/></a></article><article className="choose-card"><div className="choose-icon"><Compass size={25}/></div><h3>Flow Evolution Lab</h3><p className="choose-subtitle">Advanced teams. New scenarios. Better decisions.</p><p>For teams that already practice Kanban. Three ten-day experiments with daily surprises, team-selected WIP limits, policy experiments, and guided reflections.</p><a className="btn primary" href="#flow-evolution">Explore Flow Evolution <ArrowRight size={16}/></a></article></div></section>}
 function Results({history,total,phaseLength,lateWip,playerNames,players}){const [visible,setVisible]=useState(true);const one=reportPeriod(history,0,20),three=reportPeriod(history,20,total,true);const before=phaseLength===20?reportPeriod(history,20,30,true):null,after=phaseLength===20?reportPeriod(history,30,40):null;if(!one||!three)return null;const compare=[['Days','days'],['Backlog','backlog'],['In Progress','inProgress'],['Blocked','blocked'],['Completed','completed'],['Throughput / day','rate'],['Shortest lead time','short'],['Longest lead time','long'],['Average lead time','mean'],['75th percentile','p75'],['85th percentile','p85'],['95th percentile','p95'],['Oldest unfinished age','oldest']];const display=(v,key)=>['short','long','mean','p75','p85','p95','oldest'].includes(key)?formatDays(v):key==='rate'?v.toFixed(2):v;
@@ -117,7 +132,7 @@ function App(){
       window.scrollTo(0,0);
     }
   },[page]);
-  return <><Nav/><main>
+  return <><Nav page={page}/><main>
     {page==='evolution'?<FlowEvolution/>:page==='assessment'?<FlowAssessment/>:page==='about'?<AboutMe/>:page==='facilitated'?
       <><FacilitatedHero/><Simulator/><Footer/></>:
       <><Intro/><HowDetails/><ChooseSimulation/><div className="wrap home-credit"><p>Simulation card rules adapted from <a href="https://www.agendashift.com/resources/featureban" target="_blank" rel="noopener noreferrer">Featureban by Mike Burrows</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. <a href="#about-me">Origins &amp; Acknowledgments</a>.</p></div><footer className="footer"><div className="wrap">Kanban Flow Lab · Leadership through experimentation.</div></footer></>}

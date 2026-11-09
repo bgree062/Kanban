@@ -52,3 +52,14 @@
 .home-audience-guidance span{font-size:12px;line-height:1.55;color:#4b667c}
 @media(max-width:800px){.home-audience-guidance{grid-template-columns:1fr}}
 @media(max-width:500px){.home-entry-actions{align-items:stretch;flex-direction:column}.home-entry-actions .btn{align-self:flex-start}}
+
+/* Future real-participant demonstration: static placeholder until the video is ready */
+.lab-video-section{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;padding-top:52px;padding-bottom:52px}
+.lab-video-copy h2{font-size:clamp(26px,3vw,35px);letter-spacing:-.7px;color:#10364d;margin:12px 0 14px}
+.lab-video-copy p{font-size:15px;color:#4c657a;line-height:1.7;margin:0 0 13px}
+.lab-video-copy .lab-video-note{color:#667d90;font-size:13px;margin-bottom:22px}
+.lab-video-frame{min-height:258px;border-radius:15px;border:1px solid #cadce7;background:linear-gradient(125deg,#15364e,#245671);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;text-align:center;padding:28px;box-shadow:0 8px 25px #15364e16}
+.lab-video-play{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;background:#e8b05d;color:#173650;margin-bottom:9px}
+.lab-video-frame strong{font-size:19px}
+.lab-video-frame span{font-size:13px;color:#d9e6ef}
+@media(max-width:760px){.lab-video-section{grid-template-columns:1fr;gap:22px;padding-top:36px;padding-bottom:36px}.lab-video-frame{min-height:210px}}

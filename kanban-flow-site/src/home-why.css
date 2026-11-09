@@ -38,3 +38,17 @@
 .flow-resilience .flow-resilience-close{border-top:1px solid #dce6ef;padding-top:17px;margin-bottom:0;font-size:14px}
 .flow-resilience-close a{color:#9b6418;text-decoration:underline;font-weight:750}
 @media(max-width:720px){.flow-resilience{padding:20px}.flow-resilience-grid{grid-template-columns:1fr}}
+
+/* Homepage primary starting point — isolated from simulator controls */
+.home-entry-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin:24px 0 0}
+.hero .home-start-cta{background:#d28a25;color:#102f45;border-color:#d28a25;box-shadow:0 5px 14px rgba(157,101,21,.16);font-size:15px;padding:13px 21px;min-height:48px}
+.hero .home-start-cta:hover,.hero .home-start-cta:focus-visible{background:#e5a03a;border-color:#b97720;color:#102f45}
+.home-entry-secondary{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;color:#244c69;text-decoration:underline;text-underline-offset:4px}
+.home-entry-secondary:hover{color:#a76b16}
+.hero p.home-entry-hint{font-size:12px;color:#58738a;line-height:1.55;margin:12px 0 0}
+.home-audience-guidance{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0 26px}
+.home-audience-guidance>div{display:flex;flex-direction:column;gap:6px;background:#eef4f7;border:1px solid #dce6ec;border-left:3px solid #ca8c2e;border-radius:9px;padding:14px 16px}
+.home-audience-guidance strong{font-size:13px;color:#12384f}
+.home-audience-guidance span{font-size:12px;line-height:1.55;color:#4b667c}
+@media(max-width:800px){.home-audience-guidance{grid-template-columns:1fr}}
+@media(max-width:500px){.home-entry-actions{align-items:stretch;flex-direction:column}.home-entry-actions .btn{align-self:flex-start}}

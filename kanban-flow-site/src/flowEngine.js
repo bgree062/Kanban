@@ -164,7 +164,7 @@ export function phaseMetric(state, phase){
  return {completed,rate:completed/10,blocked:snap?.counts.blocked??0,wip:(snap?.counts.working??0)+(snap?.counts.review??0),backlog:snap?.counts.backlog??0,leadAverage:lead.length?lead.reduce((a,b)=>a+b,0)/lead.length:null,p85:percentile(.85),daily:phaseSnap.map(x=>({day:x.day-(phase-1)*10,done:x.counts.done})),events:state.events.filter(x=>x.day>(phase-1)*10&&x.day<=end).length};
 }
 export function createGame(players,names,seed=Date.now()%1000000000){const tasks=newTasks(1);return {version:1,players,names:names.slice(0,players).map((n,i)=>n.trim()||`Player ${i+1}`),seed,day:1,gate:'phase-setup',cards:makeDeck(seed,players),scenarios:makeScenarios(seed),tasks,turns:{},settings:[null,null,null],reflect:[null,null,null],events:[],snapshots:[],unavailable:null,scenarioDecision:null,backlogOrder:tasks.map(t=>t.id),replenishmentReturn:null,replenishmentSource:null};}
-export function choosePhase(state,wip,practice,reason){const next=structuredClone(state),idx=phaseForDay(next.day)-1;next.settings[idx]={wip,practice,reason};next.gate='replenishment';next.replenishmentReturn='scenario';next.replenishmentSource='phase';return next;}
+export function choosePhase(state,wip,practice,reason,experiment={}){const next=structuredClone(state),idx=phaseForDay(next.day)-1;next.settings[idx]={wip,practice,reason,expected:experiment.expected||'',measure:experiment.measure||'',guardrails:experiment.guardrails||''};next.gate='replenishment';next.replenishmentReturn='scenario';next.replenishmentSource='phase';return next;}
 export function resolveScenario(state,decision){
  if(state.gate!=='scenario')return state;
  const sc=state.scenarios[state.day-1];

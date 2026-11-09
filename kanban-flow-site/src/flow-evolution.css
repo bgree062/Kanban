@@ -34,3 +34,16 @@
 .fe-reprioritize-control{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
 .fe-reprioritize-control small{font-size:11px;color:#687f90}
 @media(max-width:800px){.fe-reprioritize-control{align-items:stretch;width:100%}.fe-reprioritize-control .fe-btn{width:100%}}
+
+/* Experiment log · created before each phase and reviewed afterward */
+.fe-experiment-entry{background:#f7fafc;border:1px solid #d9e5ed;border-left:4px solid #c18e32;border-radius:10px;padding:18px;margin:17px 0}
+.fe-experiment-entry h3{margin:8px 0 7px;color:#173650}
+.fe-experiment-entry p{overflow-wrap:anywhere;line-height:1.55}
+.fe-experiment-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}
+.fe-experiment-fields .fe-label{min-width:0}.fe-experiment-fields textarea{width:100%;min-width:0;box-sizing:border-box}
+.fe-experiment-review{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
+.fe-experiment-review p{margin:7px 0;font-size:13px}
+.fe-experiment-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fe-experiment-results .fe-experiment-entry{margin:0;min-width:0}
+.fe-experiment-results p{font-size:12px}
+@media(max-width:820px){.fe-experiment-fields,.fe-experiment-review,.fe-experiment-results{grid-template-columns:1fr}}

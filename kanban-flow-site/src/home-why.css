@@ -26,3 +26,15 @@
 .flow-why-close{display:flex;align-items:center;justify-content:space-between;gap:25px}
 .flow-why-close h3{margin:0 0 5px}.flow-why-close .btn{flex-shrink:0}
 @media(max-width:720px){.flow-why{padding:40px 0}.flow-why-contrast{grid-template-columns:1fr}.flow-why-arrow{transform:rotate(90deg)}.flow-why-benefits,.flow-why-scope-grid{grid-template-columns:1fr}.flow-why-close{align-items:flex-start;flex-direction:column}.flow-why-example{padding:14px}.flow-why-scope{padding:19px}}
+
+/* Applying Professor Ron's challenge: learning when conditions change */
+.flow-resilience{background:#fff;border:1px solid #dce6ef;border-left:4px solid #c98a31;border-radius:14px;padding:27px 29px;margin:2px 0 28px}
+.flow-resilience h3{font-size:clamp(21px,2.5vw,28px);letter-spacing:-.5px;color:#10364d;margin:10px 0 12px}
+.flow-resilience>p{color:#4f6a80;font-size:15px;line-height:1.75;max-width:880px}
+.flow-resilience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin:23px 0}
+.flow-resilience-grid article{background:#f3f7fa;padding:17px;border-radius:10px;display:flex;flex-direction:column;gap:8px}
+.flow-resilience-grid b{font-size:14px;color:#133a53}
+.flow-resilience-grid span{font-size:13px;color:#4f6a80;line-height:1.7}
+.flow-resilience .flow-resilience-close{border-top:1px solid #dce6ef;padding-top:17px;margin-bottom:0;font-size:14px}
+.flow-resilience-close a{color:#9b6418;text-decoration:underline;font-weight:750}
+@media(max-width:720px){.flow-resilience{padding:20px}.flow-resilience-grid{grid-template-columns:1fr}}

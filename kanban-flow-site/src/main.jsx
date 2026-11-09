@@ -7,26 +7,42 @@ import './style.css';
 import './home-why.css';
 import FlowAssessment from './FlowAssessment.jsx';
 import FlowEvolution from './FlowEvolution.jsx';
+import DataStory from './DataStory.jsx';
+import './data-story.css';
 const initialHistory=()=>[{day:0,tasks:freshBoard(),events:[]}];
 const formatDays=x=>x===null?'—':`${Number.isInteger(x)?x:x.toFixed(1)}d`;
 const classCard=(c)=>'playing-card '+(c.red?'red':'black');
 function Stat({label,value}){return <div className="metric"><b>{value}</b><span>{label}</span></div>}
 function Nav({page}){
-  const activeLink={fontWeight:800,color:'#09394F',borderBottom:'2px solid #C88724'};
-  const linkStyle={display:'inline-flex',alignItems:'center',gap:4,padding:'8px 0 9px',borderBottom:'2px solid transparent',textDecoration:'none'};
-  const navItems=[
-    {key:'home',label:'Home',href:'#home'},
-    {key:'facilitated',label:'Facilitated',href:'#facilitated'},
-    {key:'collaborative',label:'Collaborative',href:'https://kanban-multiplayer.vercel.app',external:true},
-    {key:'evolution',label:'Flow Evolution Lab',href:'#flow-evolution'},
-    {key:'assessment',label:'Flow Assessment',href:'#flow-assessment'},
-    {key:'about',label:'About Me',href:'#about-me'}
-  ];
-  return <header className="nav"><div className="wrap nav-inner"><div className="brand"><Layers3 size={25}/><div><b>Kanban Flow Lab</b><small>Leadership through experimentation</small></div></div><nav aria-label="Main navigation">{navItems.map(item=>{
-    const selected=page===item.key;
-    return <a key={item.key} href={item.href} style={{...linkStyle,...(selected?activeLink:{})}} aria-current={selected?'page':undefined} target={item.external?'_blank':undefined} rel={item.external?'noopener noreferrer':undefined}>{item.label}{item.external&&<ExternalLink size={12}/>}</a>;
-  })}</nav></div></header>;
+  const [open,setOpen]=useState(false);
+  useEffect(()=>setOpen(false),[page]);
+  const mainHref='#home';
+  const simLinks=[{label:'Facilitated Simulation',href:'#facilitated',key:'facilitated'},{label:'Collaborative Simulation',href:'https://kanban-multiplayer.vercel.app',key:'collaborative',external:true},{label:'Flow Evolution Lab',href:'#flow-evolution',key:'evolution'}];
+  const isSimulation=page==='facilitated'||page==='evolution';
+  const navLink=(item)=> <a key={item.key} className={'flow-nav-link'+(page===item.key?' active':'')} href={item.href} aria-current={page===item.key?'page':undefined} target={item.external?'_blank':undefined} rel={item.external?'noopener noreferrer':undefined} onClick={()=>setOpen(false)}>{item.label}{item.external&&<ExternalLink size={12}/>}</a>;
+  const simMenu=<div className="flow-nav-dropdown" role="group" aria-label="Simulations">{simLinks.map(navLink)}</div>;
+  return <header className="nav flow-site-nav"><div className="wrap nav-inner">
+    <a href={mainHref} className="brand" aria-label="Kanban Flow Lab home" onClick={()=>setOpen(false)}><Layers3 size={25}/><div><b>Kanban Flow Lab</b><small>Leadership through experimentation</small></div></a>
+    <nav className="flow-nav-desktop" aria-label="Main navigation">
+      {navLink({key:'home',label:'Home',href:'#home'})}
+      <div className={'flow-nav-group'+(isSimulation?' active':'')}>
+        <button type="button" className="flow-nav-trigger" aria-haspopup="true" aria-label="Simulations menu">Simulations <span aria-hidden="true">⌄</span></button>
+        {simMenu}
+      </div>
+      {navLink({key:'assessment',label:'Flow Assessment',href:'#flow-assessment'})}
+      {navLink({key:'story',label:'The Data & The Story',href:'#data-and-story'})}
+      <div className={'flow-nav-group'+(page==='about'?' active':'')}>
+        <button type="button" className="flow-nav-trigger" aria-haspopup="true" aria-label="More pages">More <span aria-hidden="true">⌄</span></button>
+        <div className="flow-nav-dropdown flow-nav-more">{navLink({key:'about',label:'About Me',href:'#about-me'})}</div>
+      </div>
+    </nav>
+    <button type="button" className="flow-nav-mobile-toggle" aria-label={open?'Close navigation':'Open navigation'} aria-expanded={open} onClick={()=>setOpen(v=>!v)}>{open?'Close ×':'Menu ☰'}</button>
+  </div>{open&&<nav className="flow-nav-mobile" aria-label="Mobile navigation">
+    {navLink({key:'home',label:'Home',href:'#home'})}<strong>Simulations</strong>{simLinks.map(navLink)}
+    {navLink({key:'assessment',label:'Flow Assessment',href:'#flow-assessment'})}{navLink({key:'story',label:'The Data & The Story',href:'#data-and-story'})}{navLink({key:'about',label:'About Me',href:'#about-me'})}
+  </nav>}</header>;
 }
+
 function Intro(){return <section className="hero"><div className="wrap"><div className="eyebrow">INTERACTIVE WORKSHOP</div><h1>Stop Starting.<br/><em>Start Finishing.</em></h1><p>When everything is started at once, finishing becomes harder. Learn to see where work gets stuck, make better decisions when plans change, and improve how work gets done—at home, on a team, or across an organization.</p><div className="home-entry-actions"><a className="btn home-start-cta" href="#choose-simulation">Start Learning <ArrowRight size={18}/></a><a className="home-entry-secondary" href="#flow-assessment">Explore the Flow Assessment <ArrowRight size={15}/></a></div><p className="home-entry-hint">No account needed for the one-screen experiences. Choose your starting point below.</p></div></section>}
 function VideoPreviewPlaceholder(){return <section className="wrap lab-video-section" aria-labelledby="lab-video-title"><div className="lab-video-copy"><div className="eyebrow dark">SEE LEARNING IN ACTION</div><h2 id="lab-video-title">Watch the Lab in Action</h2><p>See people work through the simulation, make decisions together, and discover what happens when they limit the work they start.</p><p className="lab-video-note">A short demonstration with real participants is planned. In the meantime, you can explore the simulations yourself.</p><a href="#choose-simulation" className="btn primary">Explore the simulations <ArrowRight size={16}/></a></div><div className="lab-video-frame" aria-label="Demonstration video coming soon"><div className="lab-video-play" aria-hidden="true"><Play size={29}/></div><strong>Real teams. Real decisions.</strong><span>Video demonstration coming soon</span></div></section>}
 function WhyFlowWorks(){return <section className="flow-why" aria-labelledby="flow-why-heading"><div className="wrap"><div className="eyebrow dark">WHY THIS MATTERS</div><h2 id="flow-why-heading">You cannot improve what you cannot see.</h2><p className="flow-why-lede">Think about a day when you have ten things underway but nothing finished. Starting another task rarely fixes that. The same challenge shows up in families, classrooms, service teams, hospitals, factories, and entire companies.</p><div className="flow-why-example"><div className="flow-why-contrast"><div className="flow-why-mini"><span className="flow-why-mini-label">Busy isn't always progress</span><div className="flow-why-bars" aria-hidden="true"><span/><span/><span/><span/><span/></div><strong>Lots started. Little finished.</strong></div><div className="flow-why-arrow" aria-hidden="true">→</div><div className="flow-why-mini focused"><span className="flow-why-mini-label">Focus makes progress visible</span><div className="flow-why-bars" aria-hidden="true"><span/><span/><span className="done"/><span className="done"/><span className="done"/></div><strong>Less at once. More room to finish.</strong></div></div><p>This is a teaching example, not a promise that limiting work always increases output. The simulation lets you test what actually happens.</p></div><div className="flow-why-benefits"><article><span className="flow-why-number">01</span><h3>See the work</h3><p>Make commitments, waiting, and obstacles visible so people can understand what's happening.</p></article><article><span className="flow-why-number">02</span><h3>Finish what matters</h3><p>Explore how limiting work in progress changes focus, handoffs, and teamwork.</p></article><article><span className="flow-why-number">03</span><h3>Learn from evidence</h3><p>Use measures as clues to understand the system—not as scores to judge people.</p></article></div><div className="flow-resilience" aria-labelledby="flow-resilience-title"><div className="eyebrow dark">WHEN THE PLAN CHANGES</div><h3 id="flow-resilience-title">Real life rarely follows a perfect plan.</h3><p>Someone gets sick. A customer changes priorities. A dependency delays progress. A new tool or AI system changes how work is done. The goal is not to follow one rigid process—it is to make what is happening visible, think critically, and adapt together.</p><div className="flow-resilience-grid"><article><b>Make the real workflow visible</b><span>A simple To-Do → In Progress → Done board can help you start. As work grows, show actual steps, such as development, review, testing, and approval, so waiting and bottlenecks do not stay hidden.</span></article><article><b>Ask better questions with data</b><span>Lead time, aging work, throughput, and blocked time help explain where work waits and why. No single number tells the whole story, and waiting is not always waste.</span></article><article><b>Improve before automating</b><span>New technology—including AI—may speed up parts of a process. First understand the work, its quality, and its constraints so automation does not simply accelerate existing problems.</span></article></div><p className="flow-resilience-close">Kanban Flow Lab helps you practice decisions under both predictable and unexpected conditions. Learn the basics with the foundational simulations, then explore changing demand, tradeoffs, and uncertainty in <a href="#flow-evolution">Flow Evolution Lab</a>.</p></div><div className="flow-why-scope"><h3>One idea. Every scale.</h3><div className="flow-why-scope-grid"><div><b>Personal</b><span>Organize chores, schoolwork, or personal goals without juggling everything at once.</span></div><div><b>Team</b><span>Coordinate priorities, make blockers visible, and help each other finish work.</span></div><div><b>Organization</b><span>See how handoffs, dependencies, and competing priorities affect delivery across groups.</span></div></div></div><div className="flow-why-close"><div><h3>You don't need to know Kanban to begin.</h3><p>Try a simulation, see the results, and decide what you would change. These experiences are built for discovery, not for grading people.</p></div><a className="btn primary" href="#choose-simulation">Choose a simulation <ArrowRight size={16}/></a></div></div></section>}
@@ -119,6 +135,7 @@ function App(){
   const route=()=>{const hash=window.location.hash;
     return (hash==='#kmm-assessment'||hash==='#flow-assessment')?'assessment':
       hash==='#flow-evolution'?'evolution':
+      (hash==='#data-and-story'||hash.startsWith('#metric-'))?'story':
       hash==='#about-me'||hash==='#contact'?'about':
       hash==='#how-it-works'?'home':hash==='#facilitated'||hash==='#simulator'?'facilitated':'home';
   };
@@ -136,7 +153,7 @@ function App(){
     }
   },[page]);
   return <><Nav page={page}/><main>
-    {page==='evolution'?<FlowEvolution/>:page==='assessment'?<FlowAssessment/>:page==='about'?<AboutMe/>:page==='facilitated'?
+    {page==='story'?<DataStory/>:page==='evolution'?<FlowEvolution/>:page==='assessment'?<FlowAssessment/>:page==='about'?<AboutMe/>:page==='facilitated'?
       <><FacilitatedHero/><Simulator/><Footer/></>:
       <><Intro/><WhyFlowWorks/><VideoPreviewPlaceholder/><HowDetails/><ChooseSimulation/><div className="wrap home-credit"><p>Simulation card rules adapted from <a href="https://www.agendashift.com/resources/featureban" target="_blank" rel="noopener noreferrer">Featureban by Mike Burrows</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. <a href="#about-me">Origins &amp; Acknowledgments</a>.</p></div><footer className="footer"><div className="wrap">Kanban Flow Lab · Leadership through experimentation.</div></footer></>}
   </main></>;

@@ -1,0 +1,28 @@
+/* Home — plain-language value explanation. Scoped to avoid altering simulators. */
+.flow-why{background:#fff;border-bottom:1px solid #e2e9ef;padding:66px 0 70px}
+.flow-why h2{font-size:clamp(28px,3.3vw,39px);line-height:1.18;letter-spacing:-.9px;color:#10364d;margin:12px 0 16px;max-width:780px}
+.flow-why-lede{font-size:17px;line-height:1.75;max-width:840px;color:#4d667d;margin:0 0 28px}
+.flow-why-example{border:1px solid #dce6ef;background:#f5f8fb;padding:22px 24px;border-radius:14px;margin-bottom:27px}
+.flow-why-contrast{display:grid;grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr);align-items:center;gap:16px}
+.flow-why-mini{background:white;border:1px solid #dde6ef;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.flow-why-mini.focused{border-color:#d7a95b;background:#fffcf5}
+.flow-why-mini-label{font-size:12px;font-weight:750;letter-spacing:.3px;color:#62798c}
+.flow-why-mini strong{color:#143950;font-size:15px}
+.flow-why-bars{display:flex;gap:6px;min-height:34px;align-items:center}
+.flow-why-bars span{display:block;flex:1;min-width:0;height:28px;background:#e2a65e;border-radius:5px}
+.flow-why-bars span.done{background:#3e9679}
+.flow-why-arrow{text-align:center;font-size:28px;font-weight:800;color:#b68435}
+.flow-why-example>p{font-size:12px;color:#668096;margin:17px 0 0;line-height:1.6}
+.flow-why-benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 30px}
+.flow-why-benefits article{padding:22px;background:#fff;border:1px solid #dce6ef;border-radius:12px}
+.flow-why-number{font-size:12px;letter-spacing:1.5px;font-weight:800;color:#b87b22}
+.flow-why-benefits h3,.flow-why-scope h3,.flow-why-close h3{color:#10364d;font-size:20px;letter-spacing:-.3px;margin:10px 0}
+.flow-why-benefits p,.flow-why-scope span,.flow-why-close p{color:#4f6a80;font-size:14px;line-height:1.7;margin:0}
+.flow-why-scope{background:#ecf4f7;padding:24px 28px;border-radius:14px;margin-bottom:26px}
+.flow-why-scope h3{margin:0 0 15px}
+.flow-why-scope-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.flow-why-scope-grid>div{display:flex;flex-direction:column;gap:6px;border-left:3px solid #d0a052;padding-left:13px}
+.flow-why-scope b{color:#10364d;font-size:14px}
+.flow-why-close{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.flow-why-close h3{margin:0 0 5px}.flow-why-close .btn{flex-shrink:0}
+@media(max-width:720px){.flow-why{padding:40px 0}.flow-why-contrast{grid-template-columns:1fr}.flow-why-arrow{transform:rotate(90deg)}.flow-why-benefits,.flow-why-scope-grid{grid-template-columns:1fr}.flow-why-close{align-items:flex-start;flex-direction:column}.flow-why-example{padding:14px}.flow-why-scope{padding:19px}}

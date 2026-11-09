@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {ArrowRight,ArrowLeft,BookOpen,ChartNoAxesCombined,ChartArea,MessagesSquare,FlaskConical,Lightbulb,Info,ExternalLink} from 'lucide-react';
 
 const lessons=[
@@ -29,6 +29,24 @@ export default function DataStory(){
  const [level,setLevel]=useState(0);
  const [selected,setSelected]=useState('wip');
  const [reveal,setReveal]=useState(false);
+ // A link from a simulator report opens the matching lesson immediately.
+ // Links use a new browser tab so ongoing gameplay is not unmounted.
+ useEffect(()=>{
+   const readLesson=()=>{
+     const match=window.location.hash.match(/^#metric-([a-z-]+)$/);
+     if(!match)return;
+     const lesson=lessons.find(l=>l.id===match[1]);
+     if(!lesson)return;
+     setLevel(lesson.level);
+     setSelected(lesson.id);
+     setReveal(false);
+     requestAnimationFrame(()=>document.getElementById('ds-lessons')?.scrollIntoView({block:'start',behavior:'instant'}));
+   };
+   readLesson();
+   window.addEventListener('hashchange',readLesson);
+   return ()=>window.removeEventListener('hashchange',readLesson);
+ },[]);
+
  const available=lessons.filter(l=>l.level===level);
  const current=available.find(m=>m.id===selected)||available[0];
  const chooseLevel=(i)=>{setLevel(i);setSelected(lessons.find(l=>l.level===i).id);setReveal(false)};

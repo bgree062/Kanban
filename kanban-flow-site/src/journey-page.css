@@ -39,3 +39,15 @@
 .journey-early-question strong{display:block;margin-bottom:8px;color:#0a415b}
 .journey-early-caveat{color:#667985;font-size:.84rem;line-height:1.55;margin:13px 0 0}
 @media(max-width:760px){.journey-early-experiment{padding:20px 16px}.journey-early-header{display:block}.journey-early-count{display:inline-block;margin:0 0 15px}.journey-early-detail{grid-template-columns:1fr;gap:14px;padding:18px}.journey-early-steps{gap:6px}.journey-early-step{padding:11px 8px}.journey-early-step.is-active{padding:10px 7px}.journey-early-step strong{font-size:.92rem}.journey-early-date{font-size:.74rem}}
+
+/* Chapter 4: authentic Scrum dashboard and complementary story. */
+.journey-scrum-story{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:36px;align-items:start;padding:30px 30px 36px;margin:10px 0 30px;background:#eaf2f5;border:1px solid #d8e4ea;border-radius:16px}
+.journey-scrum-copy h3{font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.2;letter-spacing:-.025em;margin:12px 0 20px;color:#0a364b}
+.journey-scrum-copy p{color:#3f5a6a;line-height:1.75;margin:0 0 15px}
+.journey-scrum-figure{margin:0;min-width:0}
+.journey-scrum-figure .journey-image-zoom{border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 12px 26px #1232}
+.journey-scrum-figure img{display:block;width:100%;height:auto;object-fit:contain}
+.journey-scrum-figure figcaption{font-size:.85rem;color:#566f7d;margin:10px 2px;line-height:1.5}
+.journey-end>p{max-width:810px;margin:15px auto;line-height:1.8}
+.journey-last-line{font-size:1.07rem;color:#163f56!important}
+@media(max-width:760px){.journey-scrum-story{grid-template-columns:1fr;gap:17px;padding:23px 17px}}

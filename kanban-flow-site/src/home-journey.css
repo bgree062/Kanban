@@ -1,0 +1,25 @@
+/* Homepage: progressive learning path. Scoped to avoid changes to simulators or assessment. */
+.home-learning-journey{padding-top:56px;padding-bottom:34px}
+.home-learning-journey h2{font-size:clamp(29px,3.6vw,42px);letter-spacing:-1px;color:#14344e;margin:10px 0 12px}
+.home-learning-intro{color:#4f657a;line-height:1.75;font-size:16px;max-width:780px;margin:0 0 26px}
+.home-learning-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.home-learning-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;background:#fff;border:1px solid #dce5ec;border-radius:15px;padding:25px;min-width:0;box-shadow:0 3px 12px rgba(19,52,78,.04)}
+.home-learning-number{color:#bb832e;font-size:11px;font-weight:850;letter-spacing:1.8px}
+.home-learning-symbol{display:grid;place-items:center;width:43px;height:43px;border-radius:12px;background:#edf4f8;color:#204c65;margin:13px 0 5px}
+.home-learning-card h3{color:#18384f;font-size:22px;margin:6px 0 9px}
+.home-learning-card p{color:#50687c;line-height:1.65;font-size:14px;margin:0 0 20px}
+.home-learning-card a{display:inline-flex;align-items:center;gap:7px;margin-top:auto;color:#19557a;font-size:13px;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+.home-learning-card a:hover{color:#ae781c}
+.home-learning-card a:focus-visible,.home-deeper-disclosure summary:focus-visible{outline:3px solid #b8822b;outline-offset:4px;border-radius:5px}
+.home-learning-reassurance{margin:17px 0 0;color:#66788b;font-size:13px;line-height:1.6}
+.home-deeper-learning{padding-top:18px;padding-bottom:48px}
+.home-deeper-disclosure{background:#f0f5f8;border:1px solid #dbe5ee;border-radius:14px;overflow:hidden}
+.home-deeper-disclosure summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 24px;cursor:pointer;color:#173650}
+.home-deeper-disclosure summary::-webkit-details-marker{display:none}
+.home-deeper-disclosure summary strong{display:block;font-size:16px}
+.home-deeper-disclosure summary small{display:block;font-size:13px;color:#64788a;margin-top:5px;line-height:1.5}
+.home-deeper-toggle{display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;font-weight:700;font-size:24px;background:#fff;border-radius:50%;color:#173650}
+.home-deeper-disclosure[open] .home-deeper-toggle{transform:rotate(45deg)}
+.home-deeper-inner{background:#fff;padding:0 20px 8px}
+.home-deeper-inner .how-content{padding-top:28px}
+@media(max-width:760px){.home-learning-journey{padding-top:36px;padding-bottom:18px}.home-learning-grid{grid-template-columns:1fr}.home-learning-card{padding:20px}.home-deeper-inner{padding:0 10px 6px}.home-deeper-disclosure summary{padding:17px}}

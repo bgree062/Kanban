@@ -15,3 +15,27 @@
 .journey-image-dialog{max-width:min(1500px,98vw);width:100%;max-height:96vh;display:flex;flex-direction:column;gap:8px;align-items:stretch}
 .journey-image-close{align-self:flex-end;background:#1f2937;color:white;border:1px solid #94a3b8;border-radius:8px;padding:9px 14px;cursor:pointer;font-weight:700}
 .journey-image-dialog img{display:block;width:100%;height:auto;max-height:calc(96vh - 60px);object-fit:contain;min-height:0}
+
+
+/* Chapter 1 interactive historical milestones: focused, optional exploration. */
+.journey-early-experiment{grid-column:1/-1;margin:-7px 0 32px;padding:25px 27px 22px;background:#fff;border:1px solid #d8e4e9;border-radius:16px;box-shadow:0 10px 28px rgba(6,43,62,.05)}
+.journey-early-header{display:flex;justify-content:space-between;align-items:start;gap:20px}
+.journey-early-header h3{margin:8px 0 8px;font-size:clamp(1.28rem,2.4vw,1.85rem);color:#07364a}
+.journey-early-header p{margin:0 0 17px;color:#435e70;line-height:1.65;max-width:700px}
+.journey-early-count{flex-shrink:0;font-weight:700;font-size:.79rem;background:#edf4f7;border:1px solid #d2e3e9;border-radius:999px;padding:8px 12px;color:#346076}
+.journey-early-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:3px 0 15px}
+.journey-early-step{appearance:none;background:#f3f7f8;border:1px solid #d2dfe5;border-radius:11px;padding:15px 11px;text-align:left;display:flex;flex-direction:column;gap:5px;cursor:pointer;color:#103b52;transition:background .18s,border-color .18s}
+.journey-early-step:hover{border-color:#ba812b;background:#fffaf1}
+.journey-early-step.is-active{border:2px solid #ce8721;background:#fff7e8;padding:14px 10px}
+.journey-early-step:focus-visible{outline:3px solid #d48a25;outline-offset:3px}
+.journey-early-day{font-size:.71rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#ba781c}
+.journey-early-step strong{font-size:1.03rem}
+.journey-early-date{font-size:.84rem;color:#567082}
+.journey-early-detail{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;align-items:center;background:#eff5f7;border-radius:11px;padding:20px 23px;min-height:154px}
+.journey-early-selected{font-size:.78rem;font-weight:800;letter-spacing:.02em;color:#b47618}
+.journey-early-detail h4{margin:7px 0;font-size:1.2rem;color:#07364a}
+.journey-early-detail p{margin:0;line-height:1.6;color:#36586a}
+.journey-early-question{border-left:3px solid #c98b31;padding-left:18px}
+.journey-early-question strong{display:block;margin-bottom:8px;color:#0a415b}
+.journey-early-caveat{color:#667985;font-size:.84rem;line-height:1.55;margin:13px 0 0}
+@media(max-width:760px){.journey-early-experiment{padding:20px 16px}.journey-early-header{display:block}.journey-early-count{display:inline-block;margin:0 0 15px}.journey-early-detail{grid-template-columns:1fr;gap:14px;padding:18px}.journey-early-steps{gap:6px}.journey-early-step{padding:11px 8px}.journey-early-step.is-active{padding:10px 7px}.journey-early-step strong{font-size:.92rem}.journey-early-date{font-size:.74rem}}
